@@ -26,3 +26,27 @@
 .text-link:hover {
   opacity: 0.7;
 }
+.main-nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  color: #111;
+  opacity: 0.7;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  opacity: 1;
+  text-decoration: underline;
+}
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
