@@ -1,67 +1,45 @@
-.hero {
-  position: relative;
-  height: 420px;
-  color: #fff;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url("../assets/images/hero/hero-main.jpg");
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.65)
-  );
-  z-index: 1;
-}
-
-.header-inner {
-  position: relative;
-  z-index: 2;
-}
-
-.header-main h1 {
-  max-width: 720px;
-  line-height: 1.4;
-}
-
-.ko {
-  display: block;
-}
-
-.en {
-  display: block;
-  margin-top: 12px;
-  font-size: 0.95em;
-  opacity: 0.85;
-}
+/* ===== FROM THE ROAD ===== */
 
 .travel-note {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
   align-items: center;
 }
 
 .travel-image img {
-  width: 100%;
-  border-radius: 12px;
+  border-radius: 18px;
 }
 
-.travel-text p {
-  margin-bottom: 14px;
+.travel-text {
+  font-size: 1rem;
 }
 
-.location {
-  font-size: 0.85em;
-  opacity: 0.7;
+.travel-text .ko {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.travel-text .en {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.travel-text .location {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .travel-note {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin-bottom: 80px;
+  }
 }
