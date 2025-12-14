@@ -23,3 +23,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   setActiveNav();
 
 });
+<script>
+document.querySelector(".nav-toggle")
+  .addEventListener("click", () => {
+    document.querySelector(".site-header")
+      .classList.toggle("open");
+  });
+</script>
