@@ -203,3 +203,6 @@
     border-top: 1px solid #eee;
   }
 }
+.road-grid {
+  grid-template-columns: 1.6fr 1.4fr;
+}
