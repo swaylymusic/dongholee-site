@@ -83,3 +83,18 @@
 .site-footer a:hover {
   color: #111;
 }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #222;
+  margin: 5px 0;
+  transition: 0.3s;
+}
