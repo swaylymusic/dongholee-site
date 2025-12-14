@@ -184,3 +184,22 @@
   margin-bottom: 16px;
   font-weight: 500;
 }
+@media (max-width: 768px) {
+
+  .main-nav {
+    display: none; /* 기본 숨기기 */
+  }
+
+  .site-header.open .main-nav {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    padding: 12px 0;
+  }
+
+  .main-nav a {
+    padding: 14px 20px;
+    border-top: 1px solid #eee;
+  }
+}
