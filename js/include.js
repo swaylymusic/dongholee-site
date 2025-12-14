@@ -22,4 +22,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadPartial("#footer", "partials/footer.html");
   setActiveNav();
 
+  /* Mobile hamburger toggle */
+  const toggle = document.querySelector(".nav-toggle");
+  const header = document.querySelector(".site-header");
+
+  if (toggle && header) {
+    toggle.addEventListener("click", () => {
+      header.classList.toggle("open");
+    });
+  }
 });
