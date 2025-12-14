@@ -32,3 +32,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".nav-toggle");
+  const header = document.querySelector(".site-header");
+
+  if (toggle && header) {
+    toggle.addEventListener("click", () => {
+      header.classList.toggle("open");
+    });
+  }
+});
+
