@@ -1,10 +1,19 @@
+// include.js
+// Header / Footer include + Mobile nav control
+// Compatible with GitHub Pages + Cloudflare
+
 async function loadPartial(selector, url) {
   const el = document.querySelector(selector);
   if (!el) return;
 
-  const res = await fetch(url);
-  const html = await res.text();
-  el.innerHTML = html;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to load ${url}`);
+    const html = await res.text();
+    el.innerHTML = html;
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 function setActiveNav() {
@@ -17,29 +26,39 @@ function setActiveNav() {
   if (link) link.classList.add("active");
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Header / Footer 로드
-  await loadPartial("#header", "partials/header.html");
-  await loadPartial("#footer", "partials/footer.html");
-
-  // 2. active 메뉴 표시
-  setActiveNav();
-
+function setupMobileNav() {
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelectorAll(".main-nav a");
 
-  // 3. 햄버거 토글
-  if (toggle && header) {
-    toggle.addEventListener("click", () => {
-      header.classList.toggle("open");
-    });
-  }
+  if (!header || !toggle) return;
 
-  // ✅ 4. 메뉴 클릭 시 닫기 (이게 핵심)
+  // 햄버거 버튼: 열기 / 닫기
+  toggle.addEventListener("click", () => {
+    header.classList.toggle("nav-open");
+  });
+
+  // 메뉴 클릭 시 자동 닫힘 (모바일 UX 핵심)
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
-      header.classList.remove("open");
+      header.classList.remove("nav-open");
     });
   });
+
+  // 화면 리사이즈 시 (모바일 → 데스크톱) 상태 초기화
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      header.classList.remove("nav-open");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // header / footer 로드
+  await loadPartial("#header", "/partials/header.html");
+  await loadPartial("#footer", "/partials/footer.html");
+
+  // header가 DOM에 들어온 뒤 실행해야 함
+  setActiveNav();
+  setupMobileNav();
 });
