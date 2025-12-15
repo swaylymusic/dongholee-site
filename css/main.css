@@ -145,8 +145,8 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(255,255,255,0.85),
-      rgba(255,255,255,1)
+      rgba(255,255,255,0.65),
+      rgba(255,255,255,0.95)
     ),
     url("/assets/images/hero/europe-alley.jpg") center / cover no-repeat;
 }
@@ -191,3 +191,4 @@ a {
     font-size: 15px;
   }
 }
+
