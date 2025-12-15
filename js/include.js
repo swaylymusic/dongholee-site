@@ -18,19 +18,20 @@ function setActiveNav() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Header 및 Footer 로드
+  // 1. Header와 Footer를 먼저 로드합니다.
   await loadPartial("#header", "partials/header.html");
   await loadPartial("#footer", "partials/footer.html");
   
-  // 2. 현재 페이지 활성화
+  // 2. 로드가 끝난 후 현재 페이지 표시(밑줄)를 합니다.
   setActiveNav();
 
-  // 3. 모바일 햄버거 토글 기능 (하나의 핸들러만 등록)
+  // 3. Header가 로딩된 후에 햄버거 버튼 이벤트를 등록합니다.
   const toggle = document.querySelector(".nav-toggle");
   const header = document.querySelector(".site-header");
 
   if (toggle && header) {
     toggle.addEventListener("click", () => {
+      // open 클래스를 넣었다 뺐다(토글) 합니다.
       header.classList.toggle("open");
     });
   }
