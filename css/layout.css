@@ -221,3 +221,27 @@ h2 {
   color: #111;
   border-bottom: 2px solid #111;
 }
+/* ===============================
+   모바일 메뉴 항목 간격 줄이기
+================================ */
+
+.main-nav a {
+  font-size: 14px;
+  margin-bottom: 15px;   /* 기존 20px → 15px로 줄이기 */
+}
+
+.main-nav a:last-child {
+  margin-bottom: 0;
+}
+
+.nav-toggle {
+  margin-top: 20px;      /* 상단 여백 조정 */
+}
+
+/* 모바일에서 메뉴가 열릴 때 */
+@media (max-width: 768px) {
+  .main-nav {
+    margin-top: 30px;    /* 메뉴와 헤더 간격 */
+    padding: 0 20px;     /* 좌우 패딩 */
+  }
+}
