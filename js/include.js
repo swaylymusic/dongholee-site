@@ -18,11 +18,14 @@ function setActiveNav() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  // 1. Header 및 Footer 불러오기
   await loadPartial("#header", "partials/header.html");
   await loadPartial("#footer", "partials/footer.html");
+
+  // 2. 현재 페이지 활성화
   setActiveNav();
 
-  /* Mobile hamburger toggle */
+  // 3. 모바일 햄버거 토글 기능
   const toggle = document.querySelector(".nav-toggle");
   const header = document.querySelector(".site-header");
 
@@ -32,14 +35,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.querySelector(".nav-toggle");
-  const header = document.querySelector(".site-header");
-
-  if (toggle && header) {
-    toggle.addEventListener("click", () => {
-      header.classList.toggle("open");
-    });
-  }
-});
-
