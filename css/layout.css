@@ -175,7 +175,7 @@
     border-bottom: 1px solid #eee;
     flex-direction: column;
     gap: 0;
-    display: none !important; /* 이 규칙이 메뉴를 기본적으로 숨깁니다. */
+    display: none; /* 이 규칙이 메뉴를 기본적으로 숨깁니다. */
   }
 
   /* Navigation links styling */
@@ -186,7 +186,7 @@
 
   /* Navigation menu open state (toggled by JS) */
   .site-header.open .main-nav {
-    display: flex !important; 
+    display: flex; 
   }
 
   /* Road section: Switch to single column layout on mobile */
@@ -195,4 +195,5 @@
     gap: 24px;
   }
 }
+
 
