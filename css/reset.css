@@ -1,15 +1,14 @@
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
