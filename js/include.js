@@ -36,9 +36,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
-document.querySelectorAll(".main-nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.querySelector(".site-header")
-      .classList.remove("open");
-  });
-});
