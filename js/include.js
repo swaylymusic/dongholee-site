@@ -18,27 +18,27 @@ function setActiveNav() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Header와 Footer를 먼저 로드합니다.
+  // 1️⃣ header / footer 로드
   await loadPartial("#header", "partials/header.html");
   await loadPartial("#footer", "partials/footer.html");
-  
-  // 2. 로드가 끝난 후 현재 페이지 표시(밑줄)를 합니다.
+
+  // 2️⃣ active 메뉴 처리
   setActiveNav();
 
-  // 3. Header가 로딩된 후에 햄버거 버튼 이벤트를 등록합니다.
+  // 3️⃣ 햄버거 버튼
   const toggle = document.querySelector(".nav-toggle");
   const header = document.querySelector(".site-header");
 
   if (toggle && header) {
     toggle.addEventListener("click", () => {
-      // open 클래스를 넣었다 뺐다(토글) 합니다.
       header.classList.toggle("open");
     });
   }
-});
-document.querySelectorAll(".main-nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.querySelector(".site-header")
-      .classList.remove("open");
+
+  // 4️⃣ ✅ 메뉴 클릭 시 자동 닫힘 (여기가 핵심)
+  document.querySelectorAll(".main-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      header.classList.remove("open");
+    });
   });
 });
