@@ -1,6 +1,6 @@
-// include.js
+// include.js (FIXED)
 // Header / Footer include + Mobile nav control
-// Compatible with GitHub Pages + Cloudflare
+// Cloudflare Pages compatible
 
 async function loadPartial(selector, url) {
   const el = document.querySelector(selector);
@@ -9,8 +9,7 @@ async function loadPartial(selector, url) {
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Failed to load ${url}`);
-    const html = await res.text();
-    el.innerHTML = html;
+    el.innerHTML = await res.text();
   } catch (err) {
     console.error(err);
   }
@@ -20,9 +19,7 @@ function setActiveNav() {
   const page = document.body.dataset.page;
   if (!page) return;
 
-  const link = document.querySelector(
-    `.main-nav a[data-nav="${page}"]`
-  );
+  const link = document.querySelector(`.main-nav a[data-nav="${page}"]`);
   if (link) link.classList.add("active");
 }
 
@@ -33,32 +30,29 @@ function setupMobileNav() {
 
   if (!header || !toggle) return;
 
-  // 햄버거 버튼: 열기 / 닫기
-  toggle.addEventListener("click", () => {
-    header.classList.toggle("nav-open");
+  // ✅ CSS와 동일하게 'open'을 토글해야 메뉴가 보임
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    header.classList.toggle("open");
   });
 
-  // 메뉴 클릭 시 자동 닫힘 (모바일 UX 핵심)
-  navLinks.forEach(link => {
+  // 메뉴 링크 클릭 시 닫기
+  navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      header.classList.remove("nav-open");
+      header.classList.remove("open");
     });
   });
 
-  // 화면 리사이즈 시 (모바일 → 데스크톱) 상태 초기화
+  // 모바일→데스크탑 전환 시 상태 초기화
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      header.classList.remove("nav-open");
-    }
+    if (window.innerWidth > 768) header.classList.remove("open");
   });
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // header / footer 로드
   await loadPartial("#header", "/partials/header.html");
   await loadPartial("#footer", "/partials/footer.html");
 
-  // header가 DOM에 들어온 뒤 실행해야 함
   setActiveNav();
   setupMobileNav();
 });
