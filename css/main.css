@@ -118,20 +118,33 @@ a {
 ================================ */
 
 @media (max-width: 768px) {
-  .page-wrap {
-    padding: 80px 18px;
+  body {
+    font-size: 16px;
   }
 
-  .intro {
-    margin-bottom: 100px;
+  .hero-title {
+    font-size: 28px;
   }
 
-  .cards {
-    gap: 20px;
+  .card h3 {
+    font-size: 16px;
   }
 
-  .card {
-    padding: 24px;
+  .card p {
+    font-size: 14px;
+  }
+  
+  .card a {
+    font-size: 14px;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 /* ===============================
@@ -197,7 +210,3 @@ a {
     font-size: 15px;
   }
 }
-
-
-
-
