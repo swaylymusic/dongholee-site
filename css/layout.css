@@ -68,6 +68,47 @@
 }
 
 /* =========================
+   Mobile styles (Max-width 768px) - 여기에 모든 모바일 스타일을 통합합니다.
+========================= */
+
+@media (max-width: 768px) {
+  /* Hamburger button visible on mobile */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Navigation menu hidden by default */
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    flex-direction: column;
+    gap: 0;
+    display: none; /* 이 규칙이 메뉴를 기본적으로 숨깁니다. */
+  }
+
+  /* Navigation links styling */
+  .main-nav a {
+    padding: 16px 20px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  /* Navigation menu open state (toggled by JS) */
+  .site-header.open .main-nav {
+    display: flex; 
+  }
+
+  /* Road section: Switch to single column layout on mobile */
+  .road-grid {
+    grid-template-columns: 1fr; /* 모바일에서는 세로로 쌓이도록 1fr로 변경 */
+    gap: 24px;
+  }
+}
+
+/* =========================
    Layout helpers
 ========================= */
 
@@ -132,7 +173,7 @@
 /* ===== Road section GRID (PC) ===== */
 .road-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1.4fr; /* PC 레이아웃 */
+  grid-template-columns: 1.6fr 1.4fr;
   gap: 32px;
   align-items: center;
   margin-top: 40px;
@@ -153,45 +194,4 @@
 .road-text .ko {
   margin-bottom: 16px;
   font-weight: 500;
-}
-
-/* =========================
-   Mobile styles (Max-width 768px)
-========================= */
-
-@media (max-width: 768px) {
-  /* Hamburger button visible on mobile */
-  .nav-toggle {
-    display: flex;
-  }
-
-  /* Navigation menu hidden by default */
-  .main-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    flex-direction: column;
-    gap: 0;
-    display: none; /* 메뉴를 기본적으로 숨깁니다. */
-  }
-
-  /* Navigation links styling */
-  .main-nav a {
-    padding: 16px 20px;
-    border-top: 1px solid #f0f0f0;
-  }
-
-  /* Navigation menu open state (toggled by JS) */
-  .site-header.open .main-nav {
-    display: flex; 
-  }
-
-  /* Road section: Switch to single column layout on mobile */
-  .road-grid {
-    grid-template-columns: 1fr; /* 모바일에서는 세로로 쌓이도록 1fr로 변경 */
-    gap: 24px;
-  }
 }
