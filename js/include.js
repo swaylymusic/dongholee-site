@@ -18,14 +18,14 @@ function setActiveNav() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // Header와 Footer를 로드합니다.
+  // 1. Header 및 Footer 로드
   await loadPartial("#header", "partials/header.html");
   await loadPartial("#footer", "partials/footer.html");
   
-  // Header 로드 후, 현재 페이지 활성화 클래스를 적용합니다.
+  // 2. 현재 페이지 활성화
   setActiveNav();
 
-  /* Mobile hamburger toggle - 하나의 리스너만 등록 */
+  // 3. 모바일 햄버거 토글 기능 (하나의 핸들러만 등록)
   const toggle = document.querySelector(".nav-toggle");
   const header = document.querySelector(".site-header");
 
