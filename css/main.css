@@ -161,7 +161,7 @@ a {
       rgba(255,255,255,0.65),
       rgba(255,255,255,0.95)
     ),
-    url("/assets/images/hero/europe-alley.jpg") center / cover no-repeat;
+    url("/assets/images/hero/hero-main.jpg") center / cover no-repeat;
 }
 
 .hero-inner {
@@ -210,3 +210,4 @@ a {
     font-size: 15px;
   }
 }
+
