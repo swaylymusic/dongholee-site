@@ -1,32 +1,12 @@
-/* =========================================================
-   Global Layout
-========================================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.page-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 64px 20px;
-}
-
-/* =========================================================
+/* =========================
    Header
-========================================================= */
-
+========================= */
 .site-header {
   position: sticky;
   top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
   z-index: 1000;
-  background: #ffffff;
-  border-bottom: 1px solid #eaeaea;
 }
 
 .header-inner {
@@ -36,113 +16,182 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* 🔥 모바일 레이어 기준 */
 }
 
 .brand a {
-  font-size: 1rem;
   font-weight: 600;
-  color: #111;
+  font-size: 1rem;
+  color: #000;
   text-decoration: none;
 }
 
-/* =========================================================
-   Navigation (Desktop)
-========================================================= */
-
+/* =========================
+   Navigation (Desktop Default)
+========================= */
 .main-nav {
   display: flex;
   gap: 24px;
 }
 
 .main-nav a {
+  text-decoration: none;
   font-size: 0.9rem;
   color: #555;
-  text-decoration: none;
-  padding-bottom: 4px;
 }
 
 .main-nav a.active {
-  color: #111;
-  border-bottom: 2px solid #111;
+  color: #000;
+  border-bottom: 2px solid #000;
+  padding-bottom: 2px;
 }
 
-/* =========================================================
+/* =========================
    Hamburger Button
-========================================================= */
-
+========================= */
 .nav-toggle {
-  display: none;
+  display: none; /* PC에서는 숨김 */
   flex-direction: column;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-
-  /* 🔥 클릭 절대 보장 */
-  position: relative;
-  z-index: 3000;
+  padding: 5px; /* 터치 영역 확보 */
 }
 
 .nav-toggle span {
   width: 22px;
   height: 2px;
-  background: #111;
+  background: #000;
   display: block;
+  transition: 0.3s;
 }
 
-/* =========================================================
-   Mobile Navigation (CRITICAL FIX)
-========================================================= */
-
+/* =========================
+   Mobile Logic (Max-width 768px)
+========================= */
 @media (max-width: 768px) {
-
-  /* 햄버거 표시 */
+  /* 1. 햄버거 버튼 보이기 */
   .nav-toggle {
     display: flex;
   }
 
-  /* ❌ 기본 상태: 메뉴 완전 제거 */
+  /* 2. 메뉴 기본 숨기기 */
   .main-nav {
-    display: none;
+    display: none; /* 안 보이게 */
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-
+    background: #fff;
+    border-bottom: 1px solid #eee;
     flex-direction: column;
-    background: #ffffff;
-    border-bottom: 1px solid #eaeaea;
-
-    /* 🔥 클릭 가로채기 방지 */
-    pointer-events: none;
-    z-index: 2000;
+    gap: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 
-  .main-nav a {
-    padding: 16px 20px;
-    border-top: 1px solid #f0f0f0;
-  }
-
-  /* ✅ 열렸을 때만 활성화 */
+  /* 3. JS가 .open 클래스를 붙이면 메뉴 보이기 */
   .site-header.open .main-nav {
-    display: flex;
-    pointer-events: auto;
+    display: flex; /* 보이게 변경 */
+  }
+
+  /* 메뉴 링크 스타일 */
+  .main-nav a {
+    padding: 15px 20px;
+    border-top: 1px solid #f9f9f9;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* 로드 섹션 그리드 모바일용 */
+  .road-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* =========================================================
-   Footer
-========================================================= */
-
-.site-footer {
-  margin-top: 120px;
-  padding: 48px 20px;
-  font-size: 0.75rem;
-  color: #999;
-}
-
-.footer-inner {
+/* =========================
+   Layout helpers
+========================= */
+.page-wrap {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Intro Section */
+.section-intro {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.section-intro h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+/* Cards Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  padding: 18px 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1565c0;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* Road Grid (PC) */
+.road-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1.4fr;
+  gap: 32px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.road-image img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.road-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.road-text .ko {
+  margin-bottom: 16px;
+  font-weight: 500;
 }
