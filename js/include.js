@@ -18,25 +18,26 @@ function setActiveNav() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // 1️⃣ header / footer 로드
+  // 1. Header / Footer 로드
   await loadPartial("#header", "partials/header.html");
   await loadPartial("#footer", "partials/footer.html");
 
-  // 2️⃣ active 메뉴 처리
+  // 2. active 메뉴 표시
   setActiveNav();
 
-  // 3️⃣ 햄버거 버튼
-  const toggle = document.querySelector(".nav-toggle");
   const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelectorAll(".main-nav a");
 
+  // 3. 햄버거 토글
   if (toggle && header) {
     toggle.addEventListener("click", () => {
       header.classList.toggle("open");
     });
   }
 
-  // 4️⃣ ✅ 메뉴 클릭 시 자동 닫힘 (여기가 핵심)
-  document.querySelectorAll(".main-nav a").forEach(link => {
+  // ✅ 4. 메뉴 클릭 시 닫기 (이게 핵심)
+  navLinks.forEach(link => {
     link.addEventListener("click", () => {
       header.classList.remove("open");
     });
