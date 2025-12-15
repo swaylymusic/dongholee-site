@@ -71,10 +71,12 @@
   /* 모바일에서 햄버거 버튼 보이기 */
   .nav-toggle {
     display: flex;
+      z-index: 1100;
   }
 
   /* 모바일에서 메뉴 기본 숨기기 */
   .main-nav {
+     z-index: 1100;
     display: none;
     position: absolute;
     top: 100%;
@@ -189,3 +191,4 @@
   margin-bottom: 16px;
   font-weight: 500;
 }
+
