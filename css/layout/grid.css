@@ -1,1 +1,29 @@
+/* 그리드 시스템 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  width: 100%;
+  padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+  .col-6 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .col-4 {
+    width: 33.33%;
+  }
+}
