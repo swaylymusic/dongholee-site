@@ -1,10 +1,11 @@
 /* Projects page specific styles */
 .project-list {
-  display: grid;
+  /* The project list inherits the grid layout from the card-grid class.
+     Define only a larger gap to give breathing room between cards. */
   gap: 40px;
 }
 
-.project-item h2 {
+.project-item h3 {
   margin-bottom: 8px;
   font-size: 1.3rem;
 }
