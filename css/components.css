@@ -10,7 +10,15 @@
   border: 1px solid #eaeaea;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Increase the shadow and add a transition to create more depth.  */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Elevate cards slightly on hover to add a sense of depth */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
