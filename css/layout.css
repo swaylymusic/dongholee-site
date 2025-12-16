@@ -120,6 +120,10 @@
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
+  /* Center the footer text so that contact details and copyright
+     are aligned in the middle.  This improves balance on wider
+     screens and matches the overall site aesthetic. */
+  text-align: center;
 }
 
 .site-footer a {

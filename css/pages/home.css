@@ -1,16 +1,53 @@
 /* Home page specific styles */
+/*
+ * The "From the Road" section contains an image and text.  Rather than
+ * applying a grid directly on the section (which also affects the
+ * heading), define a separate container (.road-grid) for the image and
+ * text.  This keeps the heading on its own row and aligns the image
+ * and copy side‑by‑side on larger screens while stacking on small
+ * screens.
+ */
 .section-road {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  align-items: center;
+  margin-top: 60px;
 }
 
-.section-road img {
+/* Grid for the image and text within the road section */
+.road-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  /* Center the road grid within the page and constrain its width.  This
+     prevents the image and text from hugging the left edge on very
+     wide screens and gives the section a balanced appearance. */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Make the eyebrow heading span the full width of the road grid.  This
+   prevents it from occupying only the first column and leaving empty
+   space on the second column.  Adding a bottom margin creates clear
+   separation from the image/text row. */
+.road-grid > .section-eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .road-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Styling for the image in the road section */
+.road-image img {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.section-road .ko, .section-road .en {
-  margin-top: 16px;
+
+/* Styling for the text paragraphs in the road section */
+.road-text p {
+  margin-bottom: 16px;
+  line-height: 1.6;
 }
