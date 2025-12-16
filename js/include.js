@@ -49,10 +49,11 @@ function setupMobileNav() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadPartial("#header", "/partials/header.html");
-  await loadPartial("#footer", "/partials/footer.html");
-
+// Initialise navigation and mobile menu on page load.  The header and footer
+// are now embedded directly into each HTML file, so we don't fetch them
+// dynamically.  We still call setActiveNav() to highlight the current page
+// and setupMobileNav() to control the mobile hamburger menu.
+document.addEventListener("DOMContentLoaded", () => {
   setActiveNav();
   setupMobileNav();
 });

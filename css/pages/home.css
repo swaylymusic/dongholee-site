@@ -7,7 +7,14 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("../assets/images/hero/hero-main.jpg");
+  /*
+   * The CSS file lives under css/pages, so to reference the hero image in
+   * the project’s assets folder we need to traverse two levels up (../..).
+   * The previous path only went up a single directory which resulted
+   * in `css/assets/...` which does not exist.  Correcting the path fixes
+   * the hero background on the home page.
+   */
+  background-image: url("../../assets/images/hero/hero-main.jpg");
   background-size: cover;
   background-position: center;
   z-index: 0;
