@@ -1,0 +1,16 @@
+/* Home page specific styles */
+.section-road {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.section-road img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.section-road .ko, .section-road .en {
+  margin-top: 16px;
+}

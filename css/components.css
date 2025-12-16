@@ -1,0 +1,36 @@
+/* Card component */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0070f3;
+}
+
+.card .muted {
+  color: #888;
+  font-size: 0.9rem;
+}
