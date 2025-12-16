@@ -1,1 +1,14 @@
+/* 버튼 스타일 */
+button {
+  background-color: #1C3F60; /* 브랜드 색상 */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+button:hover {
+  background-color: #3BA3B2;
+}
