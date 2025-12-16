@@ -1,3 +1,22 @@
+/* Import all components, layout, and base styles */
+@import url('base/reset.css');
+@import url('base/font.css');
+@import url('base/colors.css');
+
+@import url('components/button.css');
+@import url('components/card.css');
+@import url('components/header.css');
+
+@import url('layout/layout.css');
+@import url('layout/nav.css');
+
+@import url('pages/home.css');
+@import url('pages/about.css');
+@import url('pages/contact.css');
+
+@import url('utils/utils.css');
+@import url('utils/animations.css');
+
 /* Hero Section */
 .hero {
   min-height: 60vh;
@@ -71,3 +90,4 @@
   font-size: 14px;
   line-height: 1.6;
 }
+
