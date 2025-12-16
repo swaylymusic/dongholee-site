@@ -1,1 +1,38 @@
+/* Navigation styles */
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
 
+.main-nav a {
+  color: #555;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.main-nav a.active {
+  color: #111;
+  border-bottom: 2px solid #111;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .site-header.open .main-nav {
+    display: flex;
+  }
+}
