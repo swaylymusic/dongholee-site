@@ -131,7 +131,7 @@
    * See https://unsplash.com/photos/47ba0277781c for details.
    */
   background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
-              url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&fm=jpg&q=80&crop=entropy&cs=tinysrgb') center/cover no-repeat;
+              url('../assets/images/hero-projects.jpg') center/cover no-repeat;
   min-height: 50vh;
   position: relative;
 }
@@ -145,7 +145,7 @@ body[data-page="contact"] .hero {
    * overlay keeps the mood open and inviting.  See https://unsplash.com/photos/3a6694fb2f61.
    */
   background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)),
-              url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&fm=jpg&q=80&crop=entropy&cs=tinysrgb') center/cover no-repeat;
+              url('../assets/images/hero-contact.jpg') center/cover no-repeat;
   min-height: 45vh;
 }
 
