@@ -4,77 +4,57 @@
   <meta charset="UTF-8">
   <title>Gallery | Dongho Lee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="A quiet visual gallery of travel moments and places by Dongho Lee.">
+  <meta name="description" content="A quiet visual gallery of travel moments and places by Dongho Lee.">
 
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/pages/gallery.css">
+  <!-- Global styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Page specific styles -->
+  <link rel="stylesheet" href="css/pages/gallery.css">
 </head>
 
 <body data-page="gallery">
+  <!-- Header injection -->
+  <div id="header"></div>
 
-<div id="header"></div>
+  <main class="page-wrap">
+    <!-- Intro -->
+    <section class="section narrow">
+      <p class="intro-text ko">
+        여행 중에 기록한 장면들을 모아 둔 공간입니다.
+        특별한 설명 없이, 그 순간의 공기만 남기고 싶었습니다.
+      </p>
+      <p class="intro-text en">
+        A collection of moments captured while travelling. Minimal words, leaving space for interpretation.
+      </p>
+    </section>
 
-<main class="page-wrap">
+    <!-- Gallery Grid -->
+    <section class="section">
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="assets/images/travel/paris/paris-01.png" alt="Quiet Paris street">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/travel/paris/paris-02.png" alt="Morning light in Paris">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/travel/london/london-01.png" alt="London street view">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/travel/london/london-02.png" alt="Rainy London afternoon">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/travel/italy/italy-01.png" alt="Quiet alley in Italy">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/travel/canada/canada-01.png" alt="Canadian morning street">
+        </figure>
+      </div>
+    </section>
+  </main>
 
-  <!-- =====================
-       INTRO
-  ====================== -->
-  <section class="section narrow">
-    <p class="intro-text ko">
-      여행 중에 기록한 장면들을 모아 둔 공간입니다.
-      특별한 설명 없이, 그 순간의 공기만 남기고 싶었습니다.
-    </p>
-    <p class="intro-text en">
-      A collection of moments captured while traveling.
-      Minimal words, leaving space for interpretation.
-    </p>
-  </section>
-
-  <!-- =====================
-       GALLERY GRID
-  ====================== -->
-  <section class="section">
-    <div class="gallery-grid">
-
-      <!-- Image item -->
-      <figure class="gallery-item">
-        <img src="assets/images/travel/paris/paris-01.jpg" alt="Quiet Paris street">
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/travel/paris/paris-02.jpg" alt="Morning light in Paris">
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/travel/london/london-01.jpg" alt="London street view">
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/travel/london/london-02.jpg" alt="Rainy London afternoon">
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/travel/italy/italy-01.jpg" alt="Quiet alley in Italy">
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="assets/images/travel/canada/canada-01.jpg" alt="Canadian morning street">
-      </figure>
-
-    </div>
-  </section>
-
-</main>
-
-<div id="footer"></div>
-
-<script src="/js/include.js"></script>
+  <!-- Footer injection -->
+  <div id="footer"></div>
+  <script src="js/include.js"></script>
 </body>
-
 </html>
-
-
