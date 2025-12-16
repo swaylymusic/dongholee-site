@@ -49,10 +49,13 @@ function setupMobileNav() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadPartial("#header", "/partials/header.html");
-  await loadPartial("#footer", "/partials/footer.html");
-
+// When the DOM is ready, highlight the active navigation item and
+// initialise mobile menu behaviour.  We intentionally avoid using
+// fetch-based includes here because loading local files via the
+// file:// protocol triggers cross‑origin restrictions in many
+// browsers.  Instead, header and footer markup is embedded directly
+// in each HTML file.  See the HTML templates for the full markup.
+document.addEventListener("DOMContentLoaded", () => {
   setActiveNav();
   setupMobileNav();
 });
