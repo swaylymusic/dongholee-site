@@ -91,7 +91,9 @@
   justify-content: center;
   color: #fff;
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('../assets/images/hero-main.jpg') center / cover no-repeat;
+  /* Default hero uses the main background image.  Individual pages can override this
+     by adding modifier classes (e.g. .hero--projects) or page‑specific rules. */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('../assets/images/hero-main.jpg') center/cover no-repeat;
   padding: 0 20px;
 }
 
@@ -104,6 +106,54 @@
   font-size: 1rem;
   opacity: 0.9;
   max-width: 600px;
+}
+
+/* Page label used in heroes on subpages.  Positioned just above the main heading
+   to act as a signpost without overwhelming the design. */
+.page-label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+
+/* Projects page hero: use a unique pastel illustration and slightly shorter height
+   to distinguish from the home page.  The overlay is lighter to match the calm
+   aesthetic of the projects section. */
+.hero--projects {
+  /*
+   * Use a real photograph for the projects hero instead of the pastel illustration.
+   * This Unsplash image shows a clean workspace with a laptop and notebook,
+   * conveying professionalism and creative experimentation.  The linear gradient
+   * overlay darkens the image just enough so the white text remains legible.
+   * See https://unsplash.com/photos/47ba0277781c for details.
+   */
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+              url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&fm=jpg&q=80&crop=entropy&cs=tinysrgb') center/cover no-repeat;
+  min-height: 50vh;
+  position: relative;
+}
+
+/* Contact page hero: lighter overlay and shorter height to convey openness. */
+body[data-page="contact"] .hero {
+  /*
+   * Use a real photograph for the contact page hero instead of an illustration.
+   * This Unsplash image shows a handshake between two people, representing a
+   * friendly connection and professional relationship.  The light gradient
+   * overlay keeps the mood open and inviting.  See https://unsplash.com/photos/3a6694fb2f61.
+   */
+  background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)),
+              url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&fm=jpg&q=80&crop=entropy&cs=tinysrgb') center/cover no-repeat;
+  min-height: 45vh;
+}
+
+/* Home page hero: slightly darker overlay than the projects page to ground the
+   primary messaging. */
+body[data-page="home"] .hero {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+              url('../assets/images/hero-main.jpg') center/cover no-repeat;
 }
 
 /* =========================================================

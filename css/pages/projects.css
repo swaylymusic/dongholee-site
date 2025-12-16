@@ -15,6 +15,43 @@
   line-height: 1.6;
 }
 
+/* Give each project card a subtle accent bar on the left and alternating
+   background shades for added visual interest.  The accent colors are
+   defined per card using CSS variables on nth‑child selectors. */
+.project-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-color, #0070f3);
+}
+
+/* Assign custom colors to each card.  Feel free to adjust the palette
+   to better match your brand. */
+.project-item:nth-child(1) {
+  --accent-color: #5a7ba8;
+}
+
+.project-item:nth-child(2) {
+  --accent-color: #a86b5a;
+}
+
+.project-item:nth-child(3) {
+  --accent-color: #5aa86b;
+}
+
+/* Alternate the background on even cards for depth. */
+.project-item:nth-child(even) {
+  background: #fcfcfc;
+}
+
 .btn {
   display: inline-block;
   padding: 10px 20px;

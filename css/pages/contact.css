@@ -1,19 +1,112 @@
 /* Contact page specific styles */
+/* The contact card uses a subtle border, background and shadow to stand out
+   from the page while staying minimal.  A max‑width centers the card on
+   larger screens. */
 .contact-card {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  max-width: 400px;
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Individual contact items have consistent spacing.  The label is uppercase
+   and muted to provide hierarchy. */
+.contact-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-item .label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
   font-weight: 600;
-  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
   margin-bottom: 4px;
-  color: #444;
+  color: #666;
 }
 
 .contact-link {
   color: #0070f3;
   font-size: 1rem;
+  text-decoration: none;
+}
+
+/* Add a subtle underline on hover for accessibility cues. */
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/*
+ * Contact form styling
+ * The form uses a card-like container similar to the contact-card for visual
+ * harmony.  Each field is stacked vertically with clear labels and a border
+ * for readability.  The submit button is styled consistently with other
+ * interactive elements on the site.
+ */
+.contact-form {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: #666;
+}
+
+.form-field input,
+.form-field textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fafafa;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0,112,243,0.2);
+  background: #fff;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-submit:hover {
+  background: #005ec2;
 }

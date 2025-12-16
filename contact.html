@@ -59,6 +59,29 @@
         </div>
       </div>
     </section>
+    <!-- Simple contact form: collects name, email and message.  Uses Formspree to
+         handle submissions so no backend is needed.  Replace `yourformid` in
+         the action URL with your actual Formspree form ID.  Includes a hidden
+         honeypot field to reduce spam. -->
+    <section class="section narrow">
+      <form class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="_replyto" required placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
+        </div>
+        <!-- Honeypot field (invisible to users) helps catch bots -->
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </section>
     <section class="section narrow">
       <p class="closing ko">급하지 않은 대화도 환영합니다. 편하게 연락 주세요.</p>
       <p class="closing en">No rush — a thoughtful conversation is always welcome.</p>
