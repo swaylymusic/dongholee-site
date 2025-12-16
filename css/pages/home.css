@@ -10,7 +10,9 @@
   align-items: center;
   background:
     linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(255,255,255,0.85)),
-    url("/assets/images/hero/hero-main.png") center/cover no-repeat;
+    /* Use a relative path so the image loads when the site is opened via file://.
+       This CSS file lives in css/pages/, so go up two directories to reach assets/images. */
+    url("../../assets/images/hero/hero-main.png") center/cover no-repeat;
   color: #111;
 }
 /* Container for hero text; constrains width and adds padding */
