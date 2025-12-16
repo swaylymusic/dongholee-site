@@ -4,99 +4,95 @@
   <meta charset="UTF-8">
   <title>Projects | Dongho Lee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal and professional projects by Dongho Lee, including real estate services, Achim Coffee and digital media experiments.">
+  <meta name="description"
+        content="Personal and professional projects by Dongho Lee, including real estate services, Achim Coffee, and digital media work.">
 
-  <!-- Global styles -->
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
-  <!-- Page specific styles -->
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages/projects.css">
 </head>
 
 <body data-page="projects">
-  <!-- Primary navigation and branding -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <a href="index.html">dongholee.ca</a>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="index.html" data-nav="home">Home</a>
-        <a href="about.html" data-nav="about">About</a>
-        <a href="projects.html" data-nav="projects">Projects</a>
-        <a href="gallery.html" data-nav="gallery">Gallery</a>
-        <a href="contact.html" data-nav="contact">Contact</a>
-      </nav>
+
+<div id="header"></div>
+
+<main class="page-wrap">
+
+  <!-- =====================
+       PROJECTS INTRO
+  ====================== -->
+  <section class="section narrow">
+    <p class="intro-text ko">
+      이 페이지는 제가 현재 집중하고 있는 일들과,
+      시간에 따라 이어지고 있는 개인 프로젝트들을 정리한 공간입니다.
+    </p>
+    <p class="intro-text en">
+      This page gathers the professional work and personal projects
+      I continue to develop over time.
+    </p>
+  </section>
+
+  <!-- =====================
+       PROJECT LIST
+  ====================== -->
+  <section class="section">
+    <div class="project-list">
+
+      <!-- Real Estate -->
+      <article class="project-item">
+        <h2>Real Estate Services</h2>
+        <p class="project-desc">
+          Residential real estate services across Ontario,
+          with a focus on long-term guidance and trust-based decisions.
+        </p>
+        <p class="project-desc ko">
+          온타리오 전역에서 주거용 부동산 매매를 중심으로,
+          단기 거래보다 장기적인 관점에서 상담하고 있습니다.
+        </p>
+        <a href="https://donghotheagent.com" target="_blank" class="btn btn-primary">
+          Visit real estate site
+        </a>
+      </article>
+
+      <!-- Achim Coffee -->
+      <article class="project-item">
+        <h2>Achim Coffee</h2>
+        <p class="project-desc">
+          A calm YouTube channel sharing quiet morning videos,
+          reflections, and gentle routines.
+        </p>
+        <p class="project-desc ko">
+          하루를 서두르지 않고 시작할 수 있도록,
+          조용한 영상과 생각들을 기록하는 유튜브 채널입니다.
+        </p>
+        <a href="https://www.youtube.com/@achim_coffee" target="_blank" class="btn btn-ghost">
+          Visit YouTube channel
+        </a>
+      </article>
+
+      <!-- Digital & Media -->
+      <article class="project-item">
+        <h2>Digital & Media Projects</h2>
+        <p class="project-desc">
+          Ongoing experiments with digital tools, content systems,
+          and media formats.
+        </p>
+        <p class="project-desc ko">
+          웹, 콘텐츠, 미디어 형식을 실험하며
+          일과 삶을 더 잘 연결하는 방식을 고민하고 있습니다.
+        </p>
+        <span class="muted">More details coming soon.</span>
+      </article>
+
     </div>
-  </header>
+  </section>
 
-  <main class="page-wrap">
-    <!-- Intro to projects -->
-    <section class="section narrow">
-      <p class="intro-text ko">
-        이 페이지는 제가 현재 집중하고 있는 일들과,
-        시간에 따라 이어지고 있는 개인 프로젝트들을 정리한 공간입니다.
-      </p>
-      <p class="intro-text en">
-        This page gathers the professional work and personal projects I continue to develop over time.
-      </p>
-    </section>
+</main>
 
-    <!-- Project list -->
-    <section class="section">
-      <div class="project-list">
-        <!-- Real Estate -->
-        <article class="project-item">
-          <h2>Real Estate Services</h2>
-          <p class="project-desc">
-            Residential real estate services across Ontario, with a focus on long‑term guidance and trust‑based decisions.
-          </p>
-          <p class="project-desc ko">
-            온타리오 전역에서 주거용 부동산 매매를 중심으로, 단기 거래보다 장기적인 관점에서 상담하고 있습니다.
-          </p>
-          <a href="https://donghotheagent.com" target="_blank" class="btn btn-primary">Visit real estate site</a>
-        </article>
+<div id="footer"></div>
 
-        <!-- Achim Coffee -->
-        <article class="project-item">
-          <h2>Achim Coffee</h2>
-          <p class="project-desc">
-            A calm YouTube channel sharing quiet morning videos, reflections and gentle routines.
-          </p>
-          <p class="project-desc ko">
-            하루를 서두르지 않고 시작할 수 있도록, 조용한 영상과 생각들을 기록하는 유튜브 채널입니다.
-          </p>
-          <a href="https://www.youtube.com/@achim_coffee" target="_blank" class="btn btn-ghost">Visit YouTube channel</a>
-        </article>
-
-        <!-- Digital & Media -->
-        <article class="project-item">
-          <h2>Digital &amp; Media Projects</h2>
-          <p class="project-desc">
-            Ongoing experiments with digital tools, content systems and media formats.
-          </p>
-          <p class="project-desc ko">
-            웹, 콘텐츠, 미디어 형식을 실험하며 일과 삶을 더 잘 연결하는 방식을 고민하고 있습니다.
-          </p>
-          <span class="muted">More details coming soon.</span>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- Site footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>
-        © 2025 Dongho Lee<br>
-        <a href="mailto:contact@donlee.realtor">contact@donlee.realtor</a>
-      </p>
-    </div>
-  </footer>
-  <script src="js/include.js"></script>
+<script src="js/include.js"></script>
 </body>
 </html>
