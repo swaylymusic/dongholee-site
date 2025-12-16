@@ -1,0 +1,20 @@
+css/
+├── base/
+│   ├── reset.css         /* 기본 리셋 */
+│   └── fonts.css         /* 폰트 스타일 */
+├── components/
+│   ├── header.css        /* 헤더 스타일 */
+│   ├── footer.css        /* 푸터 스타일 */
+│   ├── button.css        /* 버튼 스타일 */
+│   └── card.css          /* 카드 스타일 */
+├── layout/
+│   ├── grid.css          /* 그리드 시스템 */
+│   └── layout.css        /* 전체 레이아웃 스타일 */
+├── pages/
+│   ├── index.css         /* 메인 페이지 전용 스타일 */
+│   ├── about.css         /* About 페이지 전용 스타일 */
+│   ├── gallery.css       /* Gallery 페이지 전용 스타일 */
+│   └── contact.css       /* Contact 페이지 전용 스타일 */
+├── utils/
+│   ├── utils.css         /* 자주 쓰는 유틸리티 클래스 */
+└── main.css              /* 전체 스타일을 적용할 주 스타일 시트 */

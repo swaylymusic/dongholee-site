@@ -1,0 +1,148 @@
+/* =========================================================
+   Global Layout
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 20px;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* 🔥 모바일 레이어 기준 */
+}
+
+.brand a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+}
+
+/* =========================================================
+   Navigation (Desktop)
+========================================================= */
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.main-nav a.active {
+  color: #111;
+  border-bottom: 2px solid #111;
+}
+
+/* =========================================================
+   Hamburger Button
+========================================================= */
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  /* 🔥 클릭 절대 보장 */
+  position: relative;
+  z-index: 3000;
+}
+
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+  display: block;
+}
+
+/* =========================================================
+   Mobile Navigation (CRITICAL FIX)
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* 햄버거 표시 */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* ❌ 기본 상태: 메뉴 완전 제거 */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+
+    /* 🔥 클릭 가로채기 방지 */
+    pointer-events: none;
+    z-index: 2000;
+  }
+
+  .main-nav a {
+    padding: 16px 20px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  /* ✅ 열렸을 때만 활성화 */
+  .site-header.open .main-nav {
+    display: flex;
+    pointer-events: auto;
+  }
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+
+.site-footer {
+  margin-top: 120px;
+  padding: 48px 20px;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}

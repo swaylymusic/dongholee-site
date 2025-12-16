@@ -1,0 +1,31 @@
+.subtitle {
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.section.narrow {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.lead {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.section h2 {
+  margin-bottom: 12px;
+}
+
+.section.subtle {
+  background: #fafafa;
+  padding: 48px 24px;
+  border-radius: 12px;
+}
+
+.closing {
+  margin-top: 24px;
+  font-style: italic;
+  opacity: 0.85;
+}
