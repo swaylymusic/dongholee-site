@@ -1,0 +1,104 @@
+/* Home page styles */
+.hero {
+  /*
+    The hero sits atop the page with a generous height.  A soft white
+    gradient overlays the background image to keep text legible without
+    overpowering the photograph.  Flexbox centres the inner content.
+  */
+  /* Increase height slightly to provide a grander introduction */
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background:
+    /* A slightly stronger gradient to lighten the hero image while keeping the text legible */
+    linear-gradient(to bottom, rgba(255,255,255,0.65), rgba(255,255,255,0.92)),
+    /* Use a relative path so the image loads when the site is opened via file://.
+       This CSS file lives in css/pages/, so go up two directories to reach assets/images. */
+    url("../../assets/images/hero/hero-main.png") center/cover no-repeat;
+  color: #111;
+}
+/* Container for hero text; constrains width and adds padding */
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Eyebrow text above the headline */
+.hero-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  color: #555;
+  text-transform: uppercase;
+}
+
+/* Headline */
+.hero-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+/* Subhead */
+.hero-sub {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Card grid
+   The card grid aligns three cards in a row on larger screens and stacks
+   them on small devices.  Spacing between cards matches the general
+   component spacing defined in the layout. */
+.card-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.card-grid .card {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    flex-direction: column;
+  }
+}
+
+/* From the Road layout
+   A simple two‑column layout for the travel note.  On narrow screens the
+   columns stack vertically. */
+.road-grid {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.road-image img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.road-text .ko {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.road-text .en {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.road-text .cite {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .road-grid {
+    flex-direction: column;
+  }
+}

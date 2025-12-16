@@ -1,0 +1,24 @@
+/* Import all components, layout, and base styles */
+@import url('base/reset.css');
+@import url('base/font.css');
+@import url('base/colors.css');
+
+@import url('components/button.css');
+@import url('components/card.css');
+@import url('components/header.css');
+
+@import url('layout/layout.css');
+@import url('layout/nav.css');
+@import url('layout/grid.css');
+@import url('layout/sections.css');
+
+/* Page-specific styles are loaded individually in each HTML file.
+   We intentionally avoid importing them here to prevent duplicate
+   rules and to allow per-page customisation via the <link> tags. */
+
+@import url('utils/utils.css');
+@import url('utils/animations.css');
+
+/* Remove global hero and card definitions.  These styles now live in
+   page‑specific CSS or component files to avoid duplication. */
+
