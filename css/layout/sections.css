@@ -1,0 +1,25 @@
+/*
+ * Generic layout helpers
+ *
+ * The .section class standardises horizontal padding and vertical margins for
+ * content blocks.  Use .section.narrow to limit the maximum width for
+ * copy‑heavy content.  The .section.subtle modifier applies a light
+ * background and rounded corners to separate content softly from the
+ * surrounding page.
+ */
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.section.narrow {
+  max-width: 760px;
+}
+
+.section.subtle {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 40px 20px;
+}

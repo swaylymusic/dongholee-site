@@ -1,0 +1,11 @@
+/* 푸터 스타일 */
+footer {
+  background-color: #1C3F60;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+}

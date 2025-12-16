@@ -1,0 +1,23 @@
+/* 헤더 스타일 */
+header {
+  background-color: #1C3F60;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+header nav a:hover {
+  background-color: #3BA3B2;
+  border-radius: 5px;
+}
