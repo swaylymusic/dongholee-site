@@ -1,5 +1,9 @@
 /* Global typography and spacing */
 h1, h2, h3 {
+  /* Use an elegant serif for headings to elevate the tone of the site.
+     Cormorant Garamond lends sophistication to English titles, while
+     Noto Serif KR ensures Korean headings integrate seamlessly. */
+  font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
   font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1.3;
