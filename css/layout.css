@@ -145,7 +145,7 @@ body[data-page="contact"] .hero {
    * overlay keeps the mood open and inviting.  See https://unsplash.com/photos/3a6694fb2f61.
    */
   background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)),
-              url('../assets/images/hero-contact.jpg') center/cover no-repeat;
+              url('../assets/images/hero-contact.png') center/cover no-repeat;
   min-height: 45vh;
 }
 
