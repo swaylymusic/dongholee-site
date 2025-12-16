@@ -1,1 +1,13 @@
+/* Color scheme for the website */
+:root {
+  --primary-color: #1C3F60; /* Navy */
+  --secondary-color: #3BA3B2; /* Teal */
+  --accent-color: #FF7F50; /* Coral */
+  --background-color: #f9f9f9;
+  --text-color: #333;
+}
 
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
