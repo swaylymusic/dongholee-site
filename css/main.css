@@ -12,84 +12,13 @@
 @import url('layout/grid.css');
 @import url('layout/sections.css');
 
-@import url('pages/home.css');
-@import url('pages/about.css');
-@import url('pages/contact.css');
+/* Page-specific styles are loaded individually in each HTML file.
+   We intentionally avoid importing them here to prevent duplicate
+   rules and to allow per-page customisation via the <link> tags. */
 
 @import url('utils/utils.css');
 @import url('utils/animations.css');
 
-/* Hero Section */
-.hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.55),  /* 배경 투명도 */
-      rgba(255,255,255,0.85)   
-    ),
-    url("/assets/images/hero/hero-main.jpg") center / cover no-repeat;
-  background-position: center center;
-  background-size: cover;
-  color: #fff;
-  position: relative;
-}
-
-/* Hero-inner 타이포 */
-.hero-title {
-  font-size: clamp(32px, 5vw, 52px);
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 28px;
-}
-
-.hero-sub {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* About 섹션 간격 줄이기 */
-.about-me,
-.approach,
-.testimonials {
-  margin-bottom: 50px;
-}
-
-.about-me h2,
-.approach h2,
-.testimonials h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-/* 카드 간격 줄이기 */
-.cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;  /* 기존보다 좁히기 */
-}
-
-.card {
-  flex: 1;
-  border: 1px solid #ddd;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.card p {
-  font-size: 14px;
-  line-height: 1.6;
-}
+/* Remove global hero and card definitions.  These styles now live in
+   page‑specific CSS or component files to avoid duplication. */
 
