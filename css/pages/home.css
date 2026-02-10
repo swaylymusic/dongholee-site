@@ -1,53 +1,167 @@
-/* Home page specific styles */
-/*
- * The "From the Road" section contains an image and text.  Rather than
- * applying a grid directly on the section (which also affects the
- * heading), define a separate container (.road-grid) for the image and
- * text.  This keeps the heading on its own row and aligns the image
- * and copy side‑by‑side on larger screens while stacking on small
- * screens.
- */
-.section-road {
-  margin-top: 60px;
+/* =========================================
+   Home page specific styles
+   File: css/pages/home.css
+   ========================================= */
+
+/* --- Hero enhancement (home only) --- */
+body[data-page="home"] .hero-note {
+  margin-top: 12px;
+  max-width: 62ch;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
-/* Grid for the image and text within the road section */
-.road-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+/* --- Section divider: adds rhythm and removes “emptiness” --- */
+body[data-page="home"] .section-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 28px 0;
+}
+
+/* --- NOW strip (soft card) --- */
+body[data-page="home"] .section-now .now-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 16px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+body[data-page="home"] .section-now p {
+  margin: 0 0 12px 0;
+  line-height: 1.7;
+}
+
+body[data-page="home"] .now-links {
+  display: flex;
   align-items: center;
-  /* Center the road grid within the page and constrain its width.  This
-     prevents the image and text from hugging the left edge on very
-     wide screens and gives the section a balanced appearance. */
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+body[data-page="home"] .now-links .divider {
+  opacity: 0.5;
+}
+
+/* --- Featured cards (3-up) --- */
+body[data-page="home"] .section-featured .featured-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Make the eyebrow heading span the full width of the road grid.  This
-   prevents it from occupying only the first column and leaving empty
-   space on the second column.  Adding a bottom margin creates clear
-   separation from the image/text row. */
-.road-grid > .section-eyebrow {
+body[data-page="home"] .featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 14px;
+}
+
+body[data-page="home"] .featured-card {
+  display: block;
+  padding: 18px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+body[data-page="home"] .featured-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  opacity: 0.98;
+}
+
+body[data-page="home"] .featured-card h3 {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+body[data-page="home"] .featured-card p {
+  margin: 0 0 12px 0;
+  line-height: 1.65;
+  opacity: 0.9;
+}
+
+body[data-page="home"] .featured-cta {
+  display: inline-block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: 2px;
+}
+
+/* --- Shared text link (home only, if not globally defined) --- */
+body[data-page="home"] .text-link {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+body[data-page="home"] .text-link:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.55);
+  opacity: 0.92;
+}
+
+/* --- From the Road section (existing, kept + refined) --- */
+body[data-page="home"] .section-road {
+  margin-top: 60px;
+}
+
+/*
+ * The "From the Road" section contains an image and text. Rather than
+ * applying a grid directly on the section (which also affects the
+ * heading), define a separate container (.road-grid) for the image and
+ * text. This keeps the heading on its own row and aligns the image
+ * and copy side-by-side on larger screens while stacking on small screens.
+ */
+body[data-page="home"] .road-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body[data-page="home"] .road-grid > .section-eyebrow {
   grid-column: 1 / -1;
   margin-bottom: 16px;
 }
 
-@media (max-width: 768px) {
-  .road-grid {
+body[data-page="home"] .road-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+body[data-page="home"] .road-text p {
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+body[data-page="home"] .road-text .muted {
+  opacity: 0.75;
+}
+
+/* --- Responsive --- */
+@media (max-width: 980px) {
+  body[data-page="home"] .featured-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Styling for the image in the road section */
-.road-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+@media (max-width: 768px) {
+  body[data-page="home"] .road-grid {
+    grid-template-columns: 1fr;
+  }
 
-/* Styling for the text paragraphs in the road section */
-.road-text p {
-  margin-bottom: 16px;
-  line-height: 1.6;
+  body[data-page="home"] .hero-note {
+    max-width: 100%;
+  }
 }
