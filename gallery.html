@@ -5,71 +5,143 @@
   <title>Gallery | Dongho Lee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A quiet visual gallery of travel moments by Dongho Lee.">
-  <!-- Import refined fonts for a more sophisticated look -->
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages/gallery.css">
+
+  <!-- Inline enhancement for Alamy hover -->
+  <style>
+    .gallery-item a {
+      position: relative;
+      display: block;
+    }
+
+    .gallery-item a::after {
+      content: "Available on Alamy";
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      font-family: Inter, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.45);
+      padding: 4px 8px;
+      border-radius: 4px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+
+    .gallery-item a:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
+
 <body data-page="gallery">
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="brand"><a href="index.html">dongholee.ca</a></div>
-      <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-      <nav class="main-nav">
-        <a href="index.html" data-nav="home">Home</a>
-        <a href="about.html" data-nav="about">About</a>
-        <a href="projects.html" data-nav="projects">Projects</a>
-        <a href="gallery.html" data-nav="gallery">Gallery</a>
-        <a href="contact.html" data-nav="contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-  <!-- Page-specific hero section: introduce the Gallery page with its own title and subtitle -->
-  <section class="hero">
-    <h1 class="hero-title">Travel Gallery</h1>
-    <p class="hero-sub">Capturing quiet alleys and moments of pause.</p>
-  </section>
-  <main class="page-wrap">
-    <section class="section narrow">
-      <p class="intro-text ko">여행 길 위에서 담은 조용한 순간들을 모았습니다. 설명 대신, 숨 고를 공간을 남깁니다.</p>
-      <p class="intro-text en">Quiet moments collected on the road — no captions, just space to breathe.</p>
-    </section>
-<section class="section">
-  <div class="gallery-grid">
-    <figure class="gallery-item">
-      <img src="assets/images/travel/paris/eiffel_tower.jpg" alt="Eiffel Tower, Paris, 2024">
-      <figcaption>Paris, 2024</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="assets/images/travel/etc/firenze_wall.jpg" alt="Unknown Wall, Firenze, 2024">
-      <figcaption>Firenze, 2024</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="assets/images/travel/etc/delfiore.jpg" alt="Santa Maria del Fiore, Firenze, 2024">
-      <figcaption>Firenze, 2024</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <a href="https://www.alamy.com/tourist-photographing-the-royal-palace-of-naples-in-piazza-del-plebiscito-naples-italy-with-historic-architecture-and-dramatic-clouds-overhead-image717306280.html"
-         target="_blank"
-         rel="noopener noreferrer">
-        <img src="assets/images/travel/naples/naples.jpg"
-             alt="Piazza del Plebiscito, Naples, Italy – Royal Palace with dramatic clouds">
-        <figcaption>Napoli, 2024</figcaption>
-      </a>
-    </figure>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand"><a href="index.html">dongholee.ca</a></div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About</a>
+      <a href="projects.html" data-nav="projects">Projects</a>
+      <a href="gallery.html" data-nav="gallery">Gallery</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
   </div>
+</header>
+
+<section class="hero">
+  <h1 class="hero-title">Travel Gallery</h1>
+  <p class="hero-sub">Capturing quiet alleys and moments of pause.</p>
 </section>
-  </main>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>© 2025 Dongho Lee<br><a href="mailto:contact@donlee.realtor">contact@donlee.realtor</a></p>
+
+<main class="page-wrap">
+
+  <section class="section narrow">
+    <p class="intro-text ko">
+      여행 길 위에서 담은 조용한 순간들을 모았습니다.
+      설명 대신, 숨 고를 공간을 남깁니다.
+    </p>
+    <p class="intro-text en">
+      Quiet moments collected on the road — no captions, just space to breathe.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="gallery-grid">
+
+      <!-- Paris -->
+      <figure class="gallery-item">
+        <a href="https://www.alamy.com/eiffel-tower-paris-france-black-and-white-view-of-the-landmark-seen-from-the-river-seine-with-boats-on-the-water-and-no-people-visible-image712770233.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="assets/images/travel/paris/eiffel_tower.jpg"
+               alt="Eiffel Tower, Paris, France – black and white view from the Seine">
+          <figcaption>Paris, 2024</figcaption>
+        </a>
+      </figure>
+
+      <!-- Firenze Wall -->
+      <figure class="gallery-item">
+        <img src="assets/images/travel/etc/firenze_wall.jpg"
+             alt="Textured wall in Florence, Italy">
+        <figcaption>Firenze, 2024</figcaption>
+      </figure>
+
+      <!-- Firenze Duomo -->
+      <figure class="gallery-item">
+        <a href="https://www.alamy.com/florence-cathedral-duomo-di-firenze-florence-italy-black-and-white-view-of-the-renaissance-cathedral-with-its-marble-facade-and-no-people-image712770172.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="assets/images/travel/etc/delfiore.jpg"
+               alt="Florence Cathedral, Duomo di Firenze – black and white architectural view">
+          <figcaption>Firenze, 2024</figcaption>
+        </a>
+      </figure>
+
+      <!-- Naples -->
+      <figure class="gallery-item">
+        <a href="https://www.alamy.com/tourist-photographing-the-royal-palace-of-naples-in-piazza-del-plebiscito-naples-italy-with-historic-architecture-and-dramatic-clouds-overhead-image717306280.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="assets/images/travel/naples/naples.jpg"
+               alt="Piazza del Plebiscito, Naples, Italy – Royal Palace with dramatic clouds">
+          <figcaption>Napoli, 2024</figcaption>
+        </a>
+      </figure>
+
     </div>
-  </footer>
-  <script src="js/app.js"></script>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>
+      © 2025 Dongho Lee<br>
+      <a href="mailto:contact@donlee.realtor">contact@donlee.realtor</a>
+    </p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
 </body>
 </html>
