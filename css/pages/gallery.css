@@ -9,28 +9,29 @@
   margin: 40px auto;
 }
 
-/* 카드 프레임: aspect-ratio + fallback height */
+/* 카드 프레임(높이 보장) */
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  /* modern */
+  /* 프레임 높이를 "반드시" 만들어 줌 */
   aspect-ratio: 3 / 4;
-
-  /* fallback (aspect-ratio가 먹지 않거나 계산이 꼬일 때도 프레임 확보) */
-  height: clamp(240px, 26vw, 380px);
 }
 
-/* 링크로 감싼 경우에도 프레임을 꽉 채우게 */
-.gallery-item a {
+/* 링크가 있는 카드(Alamy)도 프레임을 꽉 채우도록 */
+.gallery-item > a {
+  position: absolute;
+  inset: 0;
   display: block;
-  height: 100%;
 }
 
-/* 이미지: 항상 프레임을 꽉 채움 */
-.gallery-item img {
+/* 링크 없는 카드도 동일하게 동작하도록(혹시 모를 레이아웃 차이 방지) */
+.gallery-item > img,
+.gallery-item > a > img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -42,25 +43,20 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background-color: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  font-size: 0.95rem;
-  padding: 6px 10px;
-  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1rem;
+  padding: 5px 10px;
+  z-index: 2;
 }
 
-/* 모바일 */
+/* 모바일 화면에서 1개씩 세로로 나열 */
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
 
   .gallery-item {
-    aspect-ratio: 4 / 5;
-    height: auto; /* 모바일에선 aspect-ratio로 관리 */
-  }
-
-  .gallery-item img {
-    height: 100%;
+    aspect-ratio: 4 / 5; /* 모바일에서 살짝 여유 */
   }
 }
