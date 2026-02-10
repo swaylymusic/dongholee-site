@@ -9,13 +9,24 @@
   margin: 40px auto;
 }
 
-/* 카드 프레임 */
+/* 카드 프레임: aspect-ratio + fallback height */
 .gallery-item {
   position: relative;
-  aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* modern */
+  aspect-ratio: 3 / 4;
+
+  /* fallback (aspect-ratio가 먹지 않거나 계산이 꼬일 때도 프레임 확보) */
+  height: clamp(240px, 26vw, 380px);
+}
+
+/* 링크로 감싼 경우에도 프레임을 꽉 채우게 */
+.gallery-item a {
+  display: block;
+  height: 100%;
 }
 
 /* 이미지: 항상 프레임을 꽉 채움 */
@@ -32,7 +43,7 @@
   bottom: 10px;
   left: 10px;
   background-color: rgba(0, 0, 0, 0.55);
-  color: white;
+  color: #fff;
   font-size: 0.95rem;
   padding: 6px 10px;
   border-radius: 4px;
@@ -45,6 +56,11 @@
   }
 
   .gallery-item {
-    aspect-ratio: 4 / 5; /* 모바일에서 조금 더 여유 */
+    aspect-ratio: 4 / 5;
+    height: auto; /* 모바일에선 aspect-ratio로 관리 */
+  }
+
+  .gallery-item img {
+    height: 100%;
   }
 }
