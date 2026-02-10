@@ -1,11 +1,116 @@
-/* About page specific styles */
-.lead {
-  margin-bottom: 16px;
-  font-size: 1.1rem;
-  line-height: 1.6;
+/* =========================================
+   About page specific styles
+   File: css/pages/about.css
+   ========================================= */
+
+/* Page rhythm */
+body[data-page="about"] .page-wrap {
+  padding-top: 8px;
 }
 
-.closing {
-  margin-top: 40px;
+/* Lead: first impression */
+body[data-page="about"] .lead {
+  margin: 0 0 14px 0;
+  font-size: 1.12rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* Keep bilingual pairs visually cohesive */
+body[data-page="about"] .lead.ko + .lead.en,
+body[data-page="about"] p.ko + p.en {
+  margin-top: 6px;
+}
+
+/* Paragraph base tuning (about only) */
+body[data-page="about"] .section.narrow p {
+  margin: 0 0 14px 0;
+  line-height: 1.75;
+}
+
+/* Section spacing: calmer, more editorial */
+body[data-page="about"] .section.narrow {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+body[data-page="about"] .section.narrow + .section.narrow {
+  margin-top: 18px;
+}
+
+/* Headings: understated but clear */
+body[data-page="about"] .section.narrow h2 {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+body[data-page="about"] .section.narrow h2 .ko {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Subtle section: soft card treatment */
+body[data-page="about"] .section.narrow.subtle {
+  margin-top: 18px;
+  padding: 18px 16px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Links inside About */
+body[data-page="about"] .text-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+body[data-page="about"] .text-link:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.55);
+  opacity: 0.92;
+}
+
+/* Link row (Gallery • Projects) */
+body[data-page="about"] .link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+body[data-page="about"] .link-row .divider {
+  opacity: 0.5;
+}
+
+/* Closing: keep it quiet, but readable */
+body[data-page="about"] .closing {
+  margin-top: 34px;
   font-style: italic;
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+/* Slightly smaller English closing if it feels long (optional) */
+body[data-page="about"] .closing.en {
+  font-size: 0.98em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  body[data-page="about"] .lead {
+    font-size: 1.05rem;
+  }
+
+  body[data-page="about"] .section.narrow.subtle {
+    padding: 16px 14px;
+    border-radius: 10px;
+  }
+
+  body[data-page="about"] .link-row {
+    gap: 8px;
+  }
 }
