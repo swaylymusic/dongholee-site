@@ -1,8 +1,17 @@
-/* Global typography and spacing */
+/* =========================================
+   Global typography, spacing & brand colors
+   File: css/main.css
+   ========================================= */
+
+/* --- Brand color system --- */
+:root {
+  --brand-link: #1E2A3A;      /* Ink Navy */
+  --brand-accent: #B08A4F;    /* Warm Gold */
+  --text-muted: #777;
+}
+
+/* --- Typography --- */
 h1, h2, h3 {
-  /* Use an elegant serif for headings to elevate the tone of the site.
-     Cormorant Garamond lends sophistication to English titles, while
-     Noto Serif KR ensures Korean headings integrate seamlessly. */
   font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -15,15 +24,17 @@ p {
   line-height: 1.6;
 }
 
+/* --- Global links (replace default blue) --- */
 a {
-  color: #0070f3;
+  color: var(--brand-link);
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--brand-link);
 }
 
+/* --- Sections --- */
 .section {
   padding: 60px 20px;
 }
@@ -33,15 +44,17 @@ a:hover {
   margin: 0 auto;
 }
 
+/* --- Eyebrow headings --- */
 .section-eyebrow {
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 16px;
-  color: #777;
+  color: var(--text-muted);
 }
 
+/* --- Text helpers --- */
 .lead {
   font-size: 1.1rem;
 }
@@ -54,4 +67,18 @@ a:hover {
 .muted {
   color: #888;
   font-size: 0.9rem;
+}
+
+/* --- Editorial text links (default style) --- */
+.text-link {
+  display: inline-block;
+  color: var(--brand-link);
+  border-bottom: 1px solid rgba(30, 42, 58, 0.25);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.text-link:hover {
+  border-bottom-color: rgba(176, 138, 79, 0.75);
+  opacity: 0.92;
 }

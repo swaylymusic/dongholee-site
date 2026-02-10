@@ -1,4 +1,8 @@
-/* Card component */
+/* =========================================
+   Card component
+   File: css/components.css
+   ========================================= */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -10,15 +14,17 @@
   border: 1px solid #eaeaea;
   padding: 20px;
   border-radius: 8px;
-  /* Increase the shadow and add a transition to create more depth.  */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 6px 20px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.05),
+    0 6px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Elevate cards slightly on hover to add a sense of depth */
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.1),
+    0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
@@ -32,10 +38,19 @@
   line-height: 1.5;
 }
 
+/* --- Card links: inherit brand system --- */
 .card a {
   font-weight: 600;
   font-size: 0.95rem;
-  color: #0070f3;
+  color: var(--brand-link);
+  border-bottom: 1px solid rgba(30, 42, 58, 0.25);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.card a:hover {
+  border-bottom-color: rgba(176, 138, 79, 0.75);
+  opacity: 0.92;
 }
 
 .card .muted {
