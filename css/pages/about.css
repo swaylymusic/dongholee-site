@@ -1,30 +1,24 @@
-/* =========================================
-   About page specific styles
-   File: css/pages/about.css
-   ========================================= */
-
-/* Page rhythm */
 body[data-page="about"] .page-wrap {
-  padding: 54px 20px 72px;
+  padding: clamp(44px, 7vw, 84px) 20px clamp(64px, 9vw, 110px);
 }
 
 body[data-page="about"] .about-profile {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 132px minmax(0, 1fr);
   gap: clamp(28px, 5vw, 52px);
   align-items: center;
-  max-width: 820px;
+  width: min(100%, 900px);
   margin: 0 auto;
-  padding: 32px;
-  border: 1px solid rgba(30, 42, 58, 0.1);
+  padding: clamp(26px, 4vw, 38px);
+  border: 1px solid var(--line);
   border-radius: 16px;
-  background: linear-gradient(135deg, #f8f6f1 0%, #fff 72%);
+  background: linear-gradient(135deg, var(--paper-warm), #fff 72%);
 }
 
 body[data-page="about"] .about-profile-image {
-  width: 150px;
-  padding: 6px;
-  border: 1px solid rgba(30, 42, 58, 0.14);
+  width: 132px;
+  padding: 5px;
+  border: 1px solid var(--line);
   border-radius: 10px;
   background: #fff;
 }
@@ -39,60 +33,83 @@ body[data-page="about"] .about-profile-image img {
   object-position: center top;
 }
 
-/* Lead: first impression */
-body[data-page="about"] .lead {
-  margin: 0 0 14px 0;
-  font-size: 1.12rem;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
-}
-
 body[data-page="about"] .about-profile-copy .section-eyebrow {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-/* Keep bilingual pairs visually cohesive */
-body[data-page="about"] .lead.ko + .lead.en,
-body[data-page="about"] p.ko + p.en {
-  margin-top: 6px;
-}
-
-/* Paragraph base tuning (about only) */
-body[data-page="about"] .section.narrow p {
-  margin: 0 0 14px 0;
+body[data-page="about"] .lead {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.7vw, 1.12rem);
   line-height: 1.75;
 }
 
-/* Section spacing: calmer, more editorial */
+body[data-page="about"] .lead + .lead {
+  margin-top: 8px;
+}
+
 body[data-page="about"] .section.narrow {
-  max-width: 820px;
+  width: min(100%, 900px);
+  max-width: none;
   padding: 0;
 }
 
-body[data-page="about"] .section.narrow + .section.narrow {
-  margin-top: 0;
+body[data-page="about"] .section.narrow p {
+  margin: 0 0 16px;
+  color: var(--ink-soft);
+  font-size: .96rem;
+  line-height: 1.78;
+}
+
+body[data-page="about"] p.ko + p.en {
+  margin-top: 2px;
 }
 
 body[data-page="about"] .about-belief {
-  margin-top: 48px;
-  padding: 0 32px;
-  color: #38404a;
-  font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
-  font-size: 1.12rem;
+  width: min(100%, 760px);
+  margin: clamp(44px, 7vw, 72px) auto 0;
+  padding: 0 clamp(8px, 3vw, 24px);
+  text-align: center;
+}
+
+body[data-page="about"] .about-belief p {
+  font-family: var(--serif);
+  font-size: clamp(1.06rem, 2vw, 1.2rem);
+  line-height: 1.8;
 }
 
 body[data-page="about"] .about-story {
   display: grid;
-  grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.65fr);
-  column-gap: clamp(32px, 6vw, 64px);
-  margin-top: 48px;
-  padding: 38px 32px 0;
-  border-top: 1px solid rgba(30, 42, 58, 0.12);
+  grid-template-columns: 220px minmax(0, 1fr);
+  column-gap: clamp(38px, 7vw, 72px);
+  margin: clamp(48px, 7vw, 72px) auto 0;
+  padding: clamp(42px, 6vw, 60px) clamp(8px, 2vw, 20px) 0;
+  border-top: 1px solid var(--line);
 }
 
 body[data-page="about"] .about-story h2 {
   grid-column: 1;
-  grid-row: 1 / span 8;
+  grid-row: 1 / span 10;
+  margin: 0;
+  line-height: 1.08;
+}
+
+body[data-page="about"] .about-story h2 .ko {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: .74rem;
+  font-weight: 650;
+  letter-spacing: .1em;
+  line-height: 1.45;
+}
+
+body[data-page="about"] .about-story h2 .en {
+  display: block;
+  font-size: clamp(1.8rem, 3vw, 2.25rem);
+  line-height: 1.06;
 }
 
 body[data-page="about"] .about-story > p,
@@ -101,80 +118,80 @@ body[data-page="about"] .about-story > .link-row {
   grid-column: 2;
 }
 
-/* Headings: understated but clear */
-body[data-page="about"] .section.narrow h2 {
-  margin: 0 0 12px 0;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-body[data-page="about"] .section.narrow h2 .ko {
-  display: inline-block;
-  margin-right: 6px;
-}
-
-/* Subtle section: soft card treatment */
-body[data-page="about"] .section.narrow.subtle {
-  margin-top: 48px;
-  padding: 38px 32px 36px;
+body[data-page="about"] .about-story.subtle {
+  padding: clamp(38px, 6vw, 54px) clamp(28px, 5vw, 48px);
   border: 0;
   border-radius: 14px;
-  background: #f8f6f1;
+  background: var(--paper-warm);
 }
 
-/* Links inside About */
 body[data-page="about"] .text-link {
-  display: inline-block;
-  margin-top: 10px;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  padding-bottom: 2px;
-  transition: border-color 0.2s ease, opacity 0.2s ease;
+  margin-top: 8px;
 }
 
-body[data-page="about"] .text-link:hover {
-  border-bottom-color: rgba(0, 0, 0, 0.55);
-  opacity: 0.92;
-}
-
-/* Link row (Gallery • Projects) */
 body[data-page="about"] .link-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 12px;
   flex-wrap: wrap;
+  margin-top: 6px;
 }
 
 body[data-page="about"] .link-row .divider {
-  opacity: 0.5;
-}
-
-/* Closing: keep it quiet, but readable */
-body[data-page="about"] .closing {
-  margin-top: 0;
-  font-style: italic;
-  line-height: 1.75;
-  opacity: 0.9;
+  color: var(--muted);
+  opacity: .55;
 }
 
 body[data-page="about"] .about-closing {
-  margin-top: 48px;
-  padding: 0 32px;
+  width: min(100%, 720px);
+  margin: clamp(50px, 8vw, 82px) auto 0;
+  padding: 0 12px;
   text-align: center;
 }
 
-/* Slightly smaller English closing if it feels long (optional) */
-body[data-page="about"] .closing.en {
-  font-size: 0.98em;
+body[data-page="about"] .closing {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.8;
 }
 
-/* Responsive tweaks */
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   body[data-page="about"] .page-wrap {
-    padding: 32px 18px 56px;
+    padding: 36px 18px 64px;
   }
 
+  body[data-page="about"] .about-story {
+    display: block;
+    margin-top: 42px;
+    padding: 34px 4px 0;
+  }
+
+  body[data-page="about"] .about-story h2 {
+    margin-bottom: 24px;
+  }
+
+  body[data-page="about"] .about-story h2 .ko {
+    margin-bottom: 7px;
+  }
+
+  body[data-page="about"] .about-story h2 .en {
+    font-size: 1.95rem;
+  }
+
+  body[data-page="about"] .about-story.subtle {
+    padding: 30px 22px;
+  }
+
+  body[data-page="about"] .about-belief {
+    margin-top: 40px;
+    padding: 0 4px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
   body[data-page="about"] .about-profile {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -182,7 +199,7 @@ body[data-page="about"] .closing.en {
   }
 
   body[data-page="about"] .about-profile-image {
-    width: 112px;
+    width: 104px;
     margin: 0 auto;
   }
 
@@ -191,31 +208,16 @@ body[data-page="about"] .closing.en {
   }
 
   body[data-page="about"] .lead {
-    font-size: 1.05rem;
-  }
-
-  body[data-page="about"] .section.narrow.subtle {
-    padding: 28px 22px;
-    border-radius: 10px;
-  }
-
-  body[data-page="about"] .about-belief,
-  body[data-page="about"] .about-closing {
-    padding-right: 8px;
-    padding-left: 8px;
-  }
-
-  body[data-page="about"] .about-story {
-    display: block;
-    margin-top: 36px;
-    padding: 28px 8px 0;
-  }
-
-  body[data-page="about"] .about-story.subtle {
-    padding: 28px 22px;
+    margin-inline: auto;
+    font-size: 1rem;
   }
 
   body[data-page="about"] .link-row {
-    gap: 8px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body[data-page="about"] .link-row .divider {
+    display: none;
   }
 }
