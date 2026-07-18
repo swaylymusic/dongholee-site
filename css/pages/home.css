@@ -325,8 +325,17 @@ body[data-page="home"] .road-image figcaption {
   line-height: 1.6;
 }
 
+body[data-page="home"] .road-image {
+  width: min(100%, 420px);
+  justify-self: center;
+}
+
 body[data-page="home"] .road-image img {
+  display: block;
   width: 100%;
+  height: auto !important;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
@@ -384,6 +393,10 @@ body[data-page="home"] .road-text .muted {
   body[data-page="home"] .road-grid {
     grid-template-columns: 1fr;
     gap: 22px;
+  }
+
+  body[data-page="home"] .road-image {
+    width: min(100%, 380px);
   }
 
   body[data-page="home"] .hero-note {
