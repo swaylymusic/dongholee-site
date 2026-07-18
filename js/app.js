@@ -155,7 +155,12 @@ function createInsightCard(post) {
   const date = new Date(post.pubDate);
   const dateText = Number.isNaN(date.getTime())
     ? ''
-    : new Intl.DateTimeFormat('ko-CA', { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
+    : new Intl.DateTimeFormat('ko-CA', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC'
+      }).format(date);
   meta.textContent = [dateText, post.category].filter(Boolean).join(' · ');
 
   const heading = document.createElement('h3');
