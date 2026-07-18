@@ -79,7 +79,7 @@ body[data-page="about"] .about-belief p {
   line-height: 1.8;
 }
 
-body[data-page="about"] .about-story {
+body[data-page="about"] .section.narrow.about-story {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   column-gap: clamp(38px, 7vw, 72px);
@@ -118,7 +118,7 @@ body[data-page="about"] .about-story > .link-row {
   grid-column: 2;
 }
 
-body[data-page="about"] .about-story.subtle {
+body[data-page="about"] .section.narrow.about-story.subtle {
   padding: clamp(38px, 6vw, 54px) clamp(28px, 5vw, 48px);
   border: 0;
   border-radius: 14px;
@@ -162,7 +162,7 @@ body[data-page="about"] .closing {
     padding: 36px 18px 64px;
   }
 
-  body[data-page="about"] .about-story {
+  body[data-page="about"] .section.narrow.about-story {
     display: block;
     margin-top: 42px;
     padding: 34px 4px 0;
@@ -180,7 +180,7 @@ body[data-page="about"] .closing {
     font-size: 1.95rem;
   }
 
-  body[data-page="about"] .about-story.subtle {
+  body[data-page="about"] .section.narrow.about-story.subtle {
     padding: 30px 22px;
   }
 
