@@ -1,84 +1,140 @@
-/* =========================================
-   Global typography, spacing & brand colors
-   File: css/main.css
-   ========================================= */
-
-/* --- Brand color system --- */
 :root {
-  --brand-link: #1E2A3A;      /* Ink Navy */
-  --brand-accent: #B08A4F;    /* Warm Gold */
-  --text-muted: #777;
+  --ink: #18212c;
+  --ink-soft: #3f4852;
+  --muted: #707780;
+  --paper: #fdfcf9;
+  --paper-warm: #f5f2eb;
+  --line: rgba(24, 33, 44, 0.13);
+  --gold: #a77d3e;
+  --serif: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+  --sans: 'Inter', 'Noto Sans KR', system-ui, sans-serif;
+  --container: 1180px;
+  --reading: 760px;
+  --radius: 14px;
+  --shadow: 0 18px 50px rgba(24, 33, 44, 0.08);
+  --brand-link: var(--ink);
+  --brand-accent: var(--gold);
+  --text-muted: var(--muted);
 }
 
-/* --- Typography --- */
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  line-height: 1.3;
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
 }
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+h1 { font-size: clamp(2.75rem, 7vw, 5.75rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.15rem); }
+h3 { font-size: clamp(1.45rem, 2.5vw, 2rem); }
 
 p {
   margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.6;
 }
 
-/* --- Global links (replace default blue) --- */
 a {
   color: var(--brand-link);
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--brand-link);
+a, button, input, textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* --- Sections --- */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(167, 125, 62, 0.38);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-wrap {
+  width: 100%;
+}
+
 .section {
-  padding: 60px 20px;
+  width: min(100%, var(--container));
+  margin-inline: auto;
+  padding: clamp(54px, 8vw, 104px) clamp(20px, 4vw, 36px);
 }
 
 .section.narrow {
-  max-width: 800px;
-  margin: 0 auto;
+  width: min(100%, var(--reading));
 }
 
-/* --- Eyebrow headings --- */
-.section-eyebrow {
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
+.section-eyebrow, .page-label, .label {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
   text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--text-muted);
 }
 
-/* --- Text helpers --- */
+.section-eyebrow {
+  margin-bottom: 18px;
+}
+
 .lead {
-  font-size: 1.1rem;
-}
-
-.closing {
-  margin-top: 40px;
-  font-style: italic;
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 1.8;
 }
 
 .muted {
-  color: #888;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
-/* --- Editorial text links (default style) --- */
 .text-link {
   display: inline-block;
-  color: var(--brand-link);
-  border-bottom: 1px solid rgba(30, 42, 58, 0.25);
   padding-bottom: 2px;
-  transition: border-color 0.2s ease, opacity 0.2s ease;
+  border-bottom: 1px solid rgba(24, 33, 44, 0.28);
+  font-weight: 550;
+  transition: color .2s ease, border-color .2s ease;
 }
 
 .text-link:hover {
-  border-bottom-color: rgba(176, 138, 79, 0.75);
-  opacity: 0.92;
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.section-divider {
+  width: min(calc(100% - 40px), var(--container));
+  height: 1px;
+  margin: 0 auto;
+  border: 0;
+  background: var(--line);
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .section { padding: 48px 20px; }
+  h1 { font-size: clamp(2.55rem, 13vw, 4rem); }
+  h2 { font-size: clamp(1.85rem, 9vw, 2.5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
 }

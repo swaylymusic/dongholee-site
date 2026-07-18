@@ -1,112 +1,52 @@
-/* Contact page specific styles */
-/* The contact card uses a subtle border, background and shadow to stand out
-   from the page while staying minimal.  A max‑width centers the card on
-   larger screens. */
-.contact-card {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  max-width: 480px;
+body[data-page="contact"] .page-wrap { padding: 20px 0 48px; }
+body[data-page="contact"] .page-wrap > .section { padding-top: 40px; padding-bottom: 20px; }
+
+.contact-card, .contact-form {
+  max-width: 620px;
   margin: 0 auto;
+  padding: clamp(24px, 5vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   background: #fff;
-  border: 1px solid #eaeaea;
+  box-shadow: 0 12px 34px rgba(24,33,44,.055);
+}
+
+.contact-card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; }
+.contact-item { display: flex; min-width: 0; flex-direction: column; }
+.contact-item .label { margin-bottom: 7px; }
+.contact-link { overflow-wrap: anywhere; color: var(--ink); font-family: var(--serif); font-size: 1.25rem; font-weight: 600; }
+.contact-link:hover { color: var(--gold); }
+
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-field { display: flex; flex-direction: column; }
+.form-field label { margin-bottom: 7px; color: var(--ink-soft); font-size: .82rem; font-weight: 600; }
+.form-field input, .form-field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* Individual contact items have consistent spacing.  The label is uppercase
-   and muted to provide hierarchy. */
-.contact-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-item .label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  color: #666;
-}
-
-.contact-link {
-  color: var(--brand-link);
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-/* Add a subtle underline on hover for accessibility cues. */
-.contact-link:hover {
-  text-decoration: underline;
-}
-
-/*
- * Contact form styling
- * The form uses a card-like container similar to the contact-card for visual
- * harmony.  Each field is stacked vertically with clear labels and a border
- * for readability.  The submit button is styled consistently with other
- * interactive elements on the site.
- */
-.contact-form {
-  max-width: 480px;
-  margin: 40px auto;
-  background: #fff;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-field label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  color: #666;
-}
-
-.form-field input,
-.form-field textarea {
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 12px 14px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: #fafafa;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
   resize: vertical;
 }
-
-.form-field input:focus,
-.form-field textarea:focus {
-  outline: none;
-  border-color: var(--brand-accent);
-  box-shadow: 0 0 0 2px rgba(176, 138, 79, 0.2);
-  background: #fff;
-}
-
+.form-field input:focus, .form-field textarea:focus { border-color: var(--gold); background: #fff; outline: 3px solid rgba(167,125,62,.15); }
 .btn-submit {
   align-self: flex-start;
-  background: var(--brand-link);
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: var(--ink);
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 12px 20px;
-  font-size: 1rem;
+  font: 600 .9rem var(--sans);
   cursor: pointer;
-  transition: background 0.2s;
 }
+.btn-submit:hover { background: #2c3947; }
+body[data-page="contact"] .closing { margin: 0; text-align: center; }
 
-.btn-submit:hover {
-  background: #2b3b50;
+@media (max-width: 640px) {
+  body[data-page="contact"] .page-wrap { padding-top: 8px; }
+  .contact-card { grid-template-columns: 1fr; gap: 20px; }
+  .btn-submit { width: 100%; }
 }

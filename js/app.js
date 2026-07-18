@@ -29,14 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.main-nav a');
 
   if (toggle) {
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
       header.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(header.classList.contains('open')));
     });
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         header.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        header.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
     });
   }
 

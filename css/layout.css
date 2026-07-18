@@ -1,181 +1,157 @@
-/* =========================================================
-   Header
-========================================================= */
 .site-header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid var(--line);
+  background: rgba(253, 252, 249, 0.92);
+  backdrop-filter: blur(18px);
 }
 
 .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: min(100%, var(--container));
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 36px);
 }
 
 .brand a {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #111;
-  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.42rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .main-nav {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: clamp(20px, 3vw, 34px);
 }
 
 .main-nav a {
-  font-size: 1rem;
-  color: #333;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
+  position: relative;
+  padding: 25px 0 23px;
+  color: var(--ink-soft);
+  font-size: .82rem;
+  font-weight: 550;
+  letter-spacing: .045em;
 }
 
-.main-nav a.active {
-  border-color: #333;
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 17px;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform .2s ease;
 }
 
-/* Hamburger button */
+.main-nav a:hover::after, .main-nav a.active::after { transform: scaleX(1); }
+
 .nav-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 11px 9px;
+  border: 0;
   background: transparent;
-  border: none;
   cursor: pointer;
 }
 
 .nav-toggle span {
-  width: 24px;
-  height: 2px;
-  background: #111;
   display: block;
+  width: 24px;
+  height: 1px;
+  margin: 5px auto;
+  background: var(--ink);
+  transition: transform .2s ease, opacity .2s ease;
 }
 
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-  }
-  .main-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: #fff;
-    display: none;
-  }
-  .main-nav a {
-    padding: 16px 20px;
-    border-top: 1px solid #f5f5f5;
-  }
-  .site-header.open .main-nav {
-    display: flex;
-  }
-}
-
-/* =========================================================
-   Hero
-========================================================= */
 .hero {
-  min-height: 60vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: clamp(420px, 62vh, 680px);
+  padding: 88px 20px;
+  overflow: hidden;
+  background: linear-gradient(rgba(10, 17, 25, .52), rgba(10, 17, 25, .66)), url('../assets/images/hero-main.jpg') center/cover no-repeat;
   color: #fff;
   text-align: center;
-  /* Default hero uses the main background image.  Individual pages can override this
-     by adding modifier classes (e.g. .hero--projects) or page‑specific rules. */
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('../assets/images/hero-main.jpg') center/cover no-repeat;
-  padding: 0 20px;
 }
 
-.hero-title {
-  font-size: clamp(32px, 6vw, 56px);
-  margin-bottom: 16px;
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 32%;
+  background: linear-gradient(transparent, rgba(8, 13, 19, .18));
+  pointer-events: none;
 }
 
-.hero-sub {
-  font-size: 1rem;
-  opacity: 0.9;
-  max-width: 600px;
-}
+.hero > * { position: relative; z-index: 1; }
+.hero-title { max-width: 900px; margin-bottom: 20px; color: #fff; }
+.hero-sub { max-width: 660px; margin: 0; color: rgba(255,255,255,.88); font-size: clamp(1rem, 2vw, 1.16rem); }
+.hero-note { color: rgba(255,255,255,.72); }
+.hero .page-label { margin-bottom: 18px; color: rgba(255,255,255,.72); }
 
-/* Page label used in heroes on subpages.  Positioned just above the main heading
-   to act as a signpost without overwhelming the design. */
-.page-label {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-size: 0.875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  opacity: 0.85;
-}
-
-/* Projects page hero: use a unique pastel illustration and slightly shorter height
-   to distinguish from the home page.  The overlay is lighter to match the calm
-   aesthetic of the projects section. */
 .hero--projects {
-  /*
-   * Use a real photograph for the projects hero instead of the pastel illustration.
-   * This Unsplash image shows a clean workspace with a laptop and notebook,
-   * conveying professionalism and creative experimentation.  The linear gradient
-   * overlay darkens the image just enough so the white text remains legible.
-   * See https://unsplash.com/photos/47ba0277781c for details.
-   */
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
-              url('../assets/images/hero-projects.jpg') center/cover no-repeat;
-  min-height: 50vh;
-  position: relative;
+  min-height: clamp(380px, 52vh, 560px);
+  background-image: linear-gradient(rgba(10,17,25,.44), rgba(10,17,25,.58)), url('../assets/images/hero-projects.jpg');
 }
 
-/* Contact page hero: lighter overlay and shorter height to convey openness. */
 body[data-page="contact"] .hero {
-  /*
-   * Use a real photograph for the contact page hero instead of an illustration.
-   * This Unsplash image shows a handshake between two people, representing a
-   * friendly connection and professional relationship.  The light gradient
-   * overlay keeps the mood open and inviting.  See https://unsplash.com/photos/3a6694fb2f61.
-   */
-  background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.4)),
-              url('../assets/images/hero-contact.png') center/cover no-repeat;
-  min-height: 45vh;
+  min-height: clamp(360px, 48vh, 520px);
+  background-image: linear-gradient(rgba(10,17,25,.38), rgba(10,17,25,.56)), url('../assets/images/hero-contact.png');
 }
 
-/* Home page hero: slightly darker overlay than the projects page to ground the
-   primary messaging. */
-body[data-page="home"] .hero {
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
-              url('../assets/images/hero-main.jpg') center/cover no-repeat;
-}
-
-/* =========================================================
-   Footer
-========================================================= */
 .site-footer {
-  background: #fafafa;
-  border-top: 1px solid #eee;
-  padding: 40px 20px;
-  font-size: 0.875rem;
-  color: #666;
+  padding: 56px 20px;
+  border-top: 1px solid var(--line);
+  background: var(--paper-warm);
+  color: var(--muted);
+  font-size: .82rem;
 }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  /* Center the footer text so that contact details and copyright
-     are aligned in the middle.  This improves balance on wider
-     screens and matches the overall site aesthetic. */
-  text-align: center;
-}
+.footer-inner { max-width: var(--container); margin: auto; text-align: center; }
+.site-footer p { margin: 0; }
+.site-footer a { color: inherit; }
+.site-footer a:hover { color: var(--ink); }
 
-.site-footer a {
-  color: inherit;
+@media (max-width: 768px) {
+  .header-inner { min-height: 64px; }
+  .nav-toggle { display: block; }
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 0;
+    padding: 8px 20px 18px;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 0 18px 32px rgba(24,33,44,.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  }
+  .site-header.open .main-nav { opacity: 1; visibility: visible; transform: translateY(0); }
+  .main-nav a { padding: 13px 4px; border-bottom: 1px solid var(--line); font-size: .92rem; }
+  .main-nav a:last-child { border-bottom: 0; }
+  .main-nav a::after { display: none; }
+  .main-nav a.active { color: var(--gold); }
+  .site-header.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .site-header.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-header.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .hero { min-height: 460px; padding: 72px 20px; }
+  .hero--projects, body[data-page="contact"] .hero { min-height: 390px; }
 }

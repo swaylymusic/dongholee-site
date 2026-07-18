@@ -1,56 +1,48 @@
-/* Gallery page specific styles */
+body[data-page="gallery"] .page-wrap > .section.narrow {
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+body[data-page="gallery"] .intro-text {
+  color: var(--ink-soft);
+  font-size: clamp(1.03rem, 2vw, 1.15rem);
+  line-height: 1.8;
+}
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin: 40px auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 32px);
 }
 
-/* 카드 프레임: 높이를 "반드시" 확보 */
 .gallery-item {
   position: relative;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  /* 핵심: 카드 프레임 비율 고정 (가로/세로 사진 모두 안정) */
-  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  background: var(--paper-warm);
 }
 
-/* ✅ 핵심: Alamy 링크(a)가 프레임 높이를 100% 받도록 */
-.gallery-item a {
-  display: block;
-  height: 100%;
-}
-
-/* 이미지: 프레임을 항상 꽉 채움 */
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* 캡션 */
+.gallery-item a { display: block; height: 100%; }
+.gallery-item img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.gallery-item:hover img { transform: scale(1.025); }
 .gallery-item figcaption {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.55);
-  color: white;
-  font-size: 1rem;
-  padding: 5px 10px;
-  border-radius: 4px;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: rgba(12,18,24,.62);
+  color: #fff;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  backdrop-filter: blur(8px);
 }
 
-/* 모바일 화면에서 1개씩 세로로 나열되도록 */
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* 모바일에서는 약간 더 여유있는 비율 추천 */
-  .gallery-item {
-    aspect-ratio: 4 / 5;
-  }
+@media (max-width: 640px) {
+  body[data-page="gallery"] .page-wrap > .section.narrow { text-align: left; }
+  .gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+  .gallery-item { aspect-ratio: 4 / 5; }
+  .gallery-item:hover img { transform: none; }
 }
