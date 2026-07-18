@@ -1,3 +1,27 @@
+const GA_MEASUREMENT_ID = 'G-H1TPFXTMXJ';
+const CROSS_DOMAIN_SITES = ['dongholee.ca', 'donghotheagent.com'];
+
+initializeAnalytics();
+
+function initializeAnalytics() {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    linker: {
+      domains: CROSS_DOMAIN_SITES,
+    },
+  });
+
+  const analyticsScript = document.createElement('script');
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.append(analyticsScript);
+}
+
 // Navigation toggling and active link highlighting
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
@@ -26,6 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   loadLatestRealEstatePosts();
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    const targetUrl = new URL(link.href, window.location.href);
+    const isCrossSiteLink = CROSS_DOMAIN_SITES.includes(targetUrl.hostname)
+      && targetUrl.hostname !== window.location.hostname;
+
+    if (isCrossSiteLink) {
+      window.gtag?.('event', 'cross_site_navigation', {
+        link_url: targetUrl.href,
+        link_text: link.textContent?.trim().replace(/\s+/g, ' ') || '',
+        destination_domain: targetUrl.hostname,
+      });
+    }
+  });
 });
 
 const LATEST_POSTS_URL = 'https://donghotheagent.com/latest-posts.json';

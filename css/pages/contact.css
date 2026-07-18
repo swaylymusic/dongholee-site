@@ -32,7 +32,7 @@
 }
 
 .contact-link {
-  color: #0070f3;
+  color: var(--brand-link);
   font-size: 1rem;
   text-decoration: none;
 }
@@ -90,14 +90,14 @@
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: #0070f3;
-  box-shadow: 0 0 0 2px rgba(0,112,243,0.2);
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 2px rgba(176, 138, 79, 0.2);
   background: #fff;
 }
 
 .btn-submit {
   align-self: flex-start;
-  background: #0070f3;
+  background: var(--brand-link);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -108,5 +108,5 @@
 }
 
 .btn-submit:hover {
-  background: #005ec2;
+  background: #2b3b50;
 }

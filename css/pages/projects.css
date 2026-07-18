@@ -36,15 +36,15 @@
 /* Assign custom colors to each card.  Feel free to adjust the palette
    to better match your brand. */
 .project-item:nth-child(1) {
-  --accent-color: #5a7ba8;
+  --accent-color: #1e2a3a;
 }
 
 .project-item:nth-child(2) {
-  --accent-color: #a86b5a;
+  --accent-color: #b08a4f;
 }
 
 .project-item:nth-child(3) {
-  --accent-color: #5aa86b;
+  --accent-color: #6b746b;
 }
 
 /* Alternate the background on even cards for depth. */
