@@ -226,11 +226,15 @@ body[data-page="home"] .resource-mark small {
 }
 
 body[data-page="home"] .resource-mark strong {
+  display: block;
+  max-width: 100%;
   margin: 18px 0;
   color: #fff;
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
   line-height: 1;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 body[data-page="home"] .resource-mark small {
