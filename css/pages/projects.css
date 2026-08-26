@@ -100,6 +100,11 @@ body[data-page="projects"] .project-notes {
   margin-bottom: 44px;
 }
 
+body[data-page="projects"] .personal-archive { display:grid; grid-template-columns:minmax(260px,.8fr) minmax(0,1.35fr); gap:clamp(48px,8vw,112px); border-top:1px solid var(--line); }
+body[data-page="projects"] .archive-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+body[data-page="projects"] .archive-grid .card { display:flex; min-height:360px; flex-direction:column; }
+body[data-page="projects"] .archive-grid .card a { margin-top:auto; }
+
 body[data-page="projects"] .project-notes > div {
   display: grid;
   grid-template-columns: 44px minmax(150px, .55fr) minmax(0, 1fr);
@@ -127,6 +132,7 @@ body[data-page="projects"] .project-notes p {
 @media (max-width: 900px) {
   body[data-page="projects"] .project-feature { grid-template-columns: 1fr; }
   body[data-page="projects"] .project-feature__heading { position: static; }
+  body[data-page="projects"] .personal-archive { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -136,4 +142,5 @@ body[data-page="projects"] .project-notes p {
     grid-template-columns: 34px 1fr;
   }
   body[data-page="projects"] .project-notes p { grid-column: 2; }
+  body[data-page="projects"] .archive-grid { grid-template-columns: 1fr; }
 }

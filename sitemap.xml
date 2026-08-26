@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://dongholee.ca/about</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dongholee.ca/for-realtors</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://dongholee.ca/contact</loc>
@@ -26,7 +32,7 @@
   </url>
   <url>
     <loc>https://dongholee.ca/projects</loc>
-    <lastmod>2026-01-18</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

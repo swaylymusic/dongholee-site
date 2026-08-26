@@ -18,6 +18,138 @@ body[data-page="home"] .hero-note {
   opacity: 0.9;
 }
 
+/* --- PRIMARY PATHWAYS --- */
+body[data-page="home"] .section-pathways {
+  padding-top: clamp(72px, 10vw, 132px);
+}
+
+body[data-page="home"] .pathways-heading {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 24px clamp(32px, 7vw, 92px);
+  align-items: end;
+  margin-bottom: clamp(36px, 6vw, 68px);
+}
+
+body[data-page="home"] .pathways-heading .section-eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+body[data-page="home"] .pathways-heading h2 {
+  margin: 0;
+}
+
+body[data-page="home"] .pathways-heading > p:last-child {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+body[data-page="home"] .pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+body[data-page="home"] .pathway-card {
+  position: relative;
+  min-height: 540px;
+  padding: clamp(32px, 5vw, 58px);
+}
+
+body[data-page="home"] .pathway-card--real-estate {
+  background: #f6f3ec;
+}
+
+body[data-page="home"] .pathway-card--realtors {
+  background: var(--ink);
+  color: rgba(255,255,255,.78);
+}
+
+body[data-page="home"] .pathway-card--realtors h3,
+body[data-page="home"] .pathway-card--realtors .section-eyebrow {
+  color: #fff;
+}
+
+body[data-page="home"] .pathway-card--realtors .ko {
+  color: rgba(255,255,255,.64);
+}
+
+body[data-page="home"] .pathway-number {
+  display: block;
+  margin-bottom: clamp(70px, 10vw, 132px);
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+}
+
+body[data-page="home"] .pathway-card h3 {
+  max-width: 15ch;
+  margin-bottom: 22px;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+}
+
+body[data-page="home"] .pathway-card > p:not(.section-eyebrow) {
+  max-width: 58ch;
+}
+
+body[data-page="home"] .pathway-card .ko {
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+body[data-page="home"] .pathway-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+body[data-page="home"] .button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+body[data-page="home"] .button-link--light {
+  border-color: #fff;
+  background: #fff;
+  color: var(--ink);
+}
+
+body[data-page="home"] .section-selected-projects {
+  border-top: 1px solid var(--line);
+}
+
+body[data-page="home"] .selected-projects-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .85fr);
+  gap: clamp(40px, 8vw, 110px);
+  align-items: start;
+}
+
+body[data-page="home"] .selected-projects-inner h2 {
+  margin: 0;
+}
+
+body[data-page="home"] .selected-projects-inner > div {
+  padding-top: 8px;
+  color: var(--ink-soft);
+}
+
 body[data-page="home"] .page-label {
   display: flex;
   justify-content: center;
@@ -435,6 +567,19 @@ body[data-page="home"] .road-text .muted {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
+  body[data-page="home"] .pathways-heading,
+  body[data-page="home"] .pathways-grid,
+  body[data-page="home"] .selected-projects-inner {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="home"] .pathway-card {
+    min-height: auto;
+  }
+
+  body[data-page="home"] .pathway-number {
+    margin-bottom: 52px;
+  }
   body[data-page="home"] .page-label {
     align-items: center;
     flex-direction: column;
