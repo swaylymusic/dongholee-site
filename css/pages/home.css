@@ -565,11 +565,20 @@ body[data-page="home"] .road-text .muted {
   opacity: 0.75;
 }
 
+body[data-page="home"] .newsletter-signup { display:grid; grid-template-columns:1.1fr .9fr; gap:34px; align-items:center; padding-top:28px; padding-bottom:28px; }
+body[data-page="home"] .newsletter-signup h2 { margin:0 0 12px; }
+body[data-page="home"] .newsletter-form { display:grid; gap:12px; padding:24px; background:#f7f5f0; border:1px solid #ded8cf; border-radius:12px; }
+body[data-page="home"] .newsletter-form label { display:grid; gap:6px; font-weight:600; }
+body[data-page="home"] .newsletter-form input[type="email"] { padding:11px; border:1px solid #aaa; border-radius:6px; font:inherit; }
+body[data-page="home"] .newsletter-consent { font-size:.9rem; grid-template-columns:auto 1fr !important; align-items:start; }
+body[data-page="home"] .honeypot { position:absolute; left:-9999px; }
+
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   body[data-page="home"] .pathways-heading,
   body[data-page="home"] .pathways-grid,
-  body[data-page="home"] .selected-projects-inner {
+  body[data-page="home"] .selected-projects-inner,
+  body[data-page="home"] .newsletter-signup {
     grid-template-columns: 1fr;
   }
 
