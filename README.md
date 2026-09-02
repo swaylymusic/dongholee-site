@@ -10,3 +10,4 @@ Personal brand website for Dongho Lee.
 - `donghotheagent.com` is the real estate website URL, not the preferred written name.
 - Use `donlee@donlee.realtor` for direct contact on the personal website.
 - Use `contact@donlee.realtor` for general inquiries and forms on the real estate website.
+- Email subscriptions from `dongholee.ca` and `donghotheagent.com` are managed together in the same Resend audience/segment.
