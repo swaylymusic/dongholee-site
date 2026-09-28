@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Gallery | Dongho Lee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A quiet visual gallery of travel moments by Dongho Lee.">
+  <meta name="description" content="Original travel photographs by Dongho Lee, with selected digital wall art on Etsy and image licensing on Alamy.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,38 +17,7 @@
   <link rel="stylesheet" href="css/layout.css?v=20260718-3">
   <link rel="stylesheet" href="css/components.css?v=20260718-3">
   <link rel="stylesheet" href="css/pages/gallery.css?v=20260718-3">
-
-  <!-- Inline enhancement for Alamy hover -->
-  <style>
-    .gallery-item a {
-      position: relative;
-      display: block;
-    }
-
-    .gallery-item a::after {
-      content: "Available on Alamy";
-      position: absolute;
-      bottom: 12px;
-      right: 14px;
-      font-family: Inter, sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.9);
-      background: rgba(0,0,0,0.45);
-      padding: 4px 8px;
-      border-radius: 4px;
-      opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-      pointer-events: none;
-    }
-
-    .gallery-item a:hover::after {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-  <link rel="stylesheet" href="css/brand-system.css?v=20260928-8">
+  <link rel="stylesheet" href="css/brand-system.css?v=20260928-9">
 <link rel="canonical" href="https://dongholee.ca/gallery">
 <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 </head>
@@ -75,19 +44,20 @@
 
 <main class="page-wrap" id="main-content">
 
-  <section class="section narrow">
-    <p class="intro-text ko">
-      여행 길 위에서 담은 조용한 순간들을 모았습니다.
-      설명 대신, 숨 고를 공간을 남깁니다.
-    </p>
-    <p class="intro-text en">
-      Quiet moments collected on the road, with room to pause.
-    </p>
+  <section class="section narrow page-introduction" aria-label="About the photographs">
+    <p class="intro-text ko" lang="ko">이곳의 여행 사진은 제가 길 위에서 직접 촬영한 작품들입니다. 파리의 거리와 피렌체의 건축, 나폴리의 광장에서 마주친 빛과 질감을 담았습니다. 익숙한 풍경에서도 잠시 멈춰 바라보게 되는 장면을 찾고, 그때의 시선을 사진으로 남깁니다. 일부 작품은 SwaylyStudio의 Etsy 숍에서 디지털 월아트로, Alamy에서는 이미지 라이선스로 만나보실 수 있습니다.</p>
+    <p class="intro-text en" lang="en">These are photographs I took on my travels, from the streets of Paris to the architecture of Florence and the open squares of Naples. I am drawn to light, texture, and the details that invite a slower look. Selected photographs are available as digital wall art through SwaylyStudio on Etsy, or for image licensing on Alamy.</p>
+    <div class="photography-links"><a class="text-link" href="https://swaylystudio.etsy.com" target="_blank" rel="noopener noreferrer">Explore digital wall art on Etsy ↗</a><a class="text-link" href="https://www.alamy.com/stock-photo/?cid=PK7DQY766T3APAQZBK4XEAFMUZ4C4PSZ5K6PV4UYS39JN5DHE9T4RM2747D7U37X&amp;sortBy=relevant" target="_blank" rel="noopener noreferrer">View my Alamy portfolio ↗</a></div>
   </section>
 
   <section class="section">
-    <div class="gallery-grid">
+    <div class="gallery-grid" id="photo-collection">
 
+      <figure class="gallery-item">
+        <a href="https://swaylystudio.etsy.com" target="_blank" rel="noopener noreferrer" aria-label="Explore Paris Avenue Rapp digital wall art on Etsy"><img src="assets/images/travel/paris/alley-01.webp" alt="Black and white photograph of Avenue Rapp architecture in Paris, photographed by Dongho Lee" width="1350" height="1800" loading="lazy" decoding="async"></a>
+        <figcaption>Paris / Avenue Rapp <span class="photo-credit">Photograph by Dongho Lee</span></figcaption>
+        <div class="photo-actions"><a href="https://swaylystudio.etsy.com" target="_blank" rel="noopener noreferrer">Digital wall art on Etsy ↗</a></div>
+      </figure>
       <!-- Paris -->
       <figure class="gallery-item">
         <a href="https://www.alamy.com/eiffel-tower-paris-france-black-and-white-view-of-the-landmark-seen-from-the-river-seine-with-boats-on-the-water-and-no-people-visible-image712770233.html"
@@ -96,16 +66,18 @@
           <img src="assets/images/travel/paris/eiffel_tower.webp"
                alt="Eiffel Tower, Paris, France – black and white view from the Seine"
                width="1350" height="1800" loading="lazy" decoding="async">
-          <figcaption>Paris, 2024</figcaption>
+          <figcaption>Paris, 2024 <span class="photo-credit">Photograph by Dongho Lee</span></figcaption>
         </a>
-      </figure>
+              <div class="photo-actions"><a href="https://swaylystudio.etsy.com" target="_blank" rel="noopener noreferrer">Digital wall art on Etsy ↗</a>
+<a href="https://www.alamy.com/eiffel-tower-paris-france-black-and-white-view-of-the-landmark-seen-from-the-river-seine-with-boats-on-the-water-and-no-people-visible-image712770233.html" target="_blank" rel="noopener noreferrer">License on Alamy ↗</a></div>
+</figure>
 
       <!-- Firenze Wall -->
       <figure class="gallery-item">
         <img src="assets/images/travel/etc/firenze_wall.webp"
              alt="Textured wall in Florence, Italy"
              width="1350" height="1800" loading="lazy" decoding="async">
-        <figcaption>Firenze, 2024</figcaption>
+        <figcaption>Firenze, 2024 <span class="photo-credit">Photograph by Dongho Lee</span></figcaption>
       </figure>
 
       <!-- Firenze Duomo -->
@@ -116,21 +88,24 @@
           <img src="assets/images/travel/etc/delfiore.webp"
                alt="Florence Cathedral, Duomo di Firenze – black and white architectural view"
                width="1350" height="1800" loading="lazy" decoding="async">
-          <figcaption>Firenze, 2024</figcaption>
+          <figcaption>Firenze, 2024 <span class="photo-credit">Photograph by Dongho Lee</span></figcaption>
         </a>
-      </figure>
+              <div class="photo-actions"><a href="https://swaylystudio.etsy.com" target="_blank" rel="noopener noreferrer">Digital wall art on Etsy ↗</a>
+<a href="https://www.alamy.com/florence-cathedral-duomo-di-firenze-florence-italy-black-and-white-view-of-the-renaissance-cathedral-with-its-marble-facade-and-no-people-image712770172.html" target="_blank" rel="noopener noreferrer">License on Alamy ↗</a></div>
+</figure>
 
       <!-- Naples -->
-      <figure class="gallery-item">
+      <figure class="gallery-item gallery-item--landscape">
         <a href="https://www.alamy.com/tourist-photographing-the-royal-palace-of-naples-in-piazza-del-plebiscito-naples-italy-with-historic-architecture-and-dramatic-clouds-overhead-image717306280.html"
            target="_blank"
            rel="noopener noreferrer">
           <img src="assets/images/travel/naples/naples.webp"
                alt="Piazza del Plebiscito, Naples, Italy – Royal Palace with dramatic clouds"
                width="1800" height="1013" loading="lazy" decoding="async">
-          <figcaption>Napoli, 2024</figcaption>
+          <figcaption>Napoli, 2024 <span class="photo-credit">Photograph by Dongho Lee</span></figcaption>
         </a>
-      </figure>
+              <div class="photo-actions"><a href="https://www.alamy.com/tourist-photographing-the-royal-palace-of-naples-in-piazza-del-plebiscito-naples-italy-with-historic-architecture-and-dramatic-clouds-overhead-image717306280.html" target="_blank" rel="noopener noreferrer">License on Alamy ↗</a></div>
+</figure>
 
     </div>
   </section>

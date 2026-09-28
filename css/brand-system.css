@@ -375,7 +375,7 @@ body[data-page=projects] .project-feature__heading {
   padding-top:72px
 }
 
-.gallery-item:nth-child(4) img {
+.gallery-item--landscape img {
   aspect-ratio:4/3
 }
 
@@ -1106,4 +1106,44 @@ body[data-page=about] .about-profile .lead {
     font-size:39px
   }
 
+}
+
+/* Matched editorial introductions for Places and Work. */
+body[data-page="gallery"] .page-wrap > .page-introduction,
+body[data-page="projects"] .page-wrap > .page-introduction {
+  width: min(100%, 1060px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 52px;
+  padding-top: 58px;
+  padding-bottom: 24px;
+  text-align: left;
+}
+body[data-page="gallery"] .page-introduction .intro-text,
+body[data-page="projects"] .page-introduction .intro-text {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.95;
+  color: var(--ink-soft);
+  margin: 0;
+  text-align: left;
+}
+body[data-page="gallery"] .page-introduction .intro-text.ko,
+body[data-page="projects"] .page-introduction .intro-text.ko {
+  font-family: 'Noto Serif KR', Georgia, serif;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: -.02em;
+}
+.photography-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px 32px; }
+.photo-credit { display: block; margin-top: 5px; font-size: 10px; color: var(--muted); letter-spacing: .025em; }
+.gallery-item .photo-actions { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 12px; }
+.gallery-item .photo-actions a { min-height: 40px; padding: 9px 0; font-size: 12px; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
+.gallery-item .photo-actions a:hover { color: var(--gold); border-color: var(--gold); }
+body[data-page="projects"] .archive-grid .card a + a { margin-top: 0; padding-top: 12px; }
+@media (max-width: 640px) {
+  body[data-page="gallery"] .page-wrap > .page-introduction,
+  body[data-page="projects"] .page-wrap > .page-introduction { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-top: 40px; padding-bottom: 12px; }
+  .photography-links { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
