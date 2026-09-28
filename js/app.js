@@ -28,26 +28,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelectorAll('.main-nav a');
 
-  if (toggle) {
+  if (toggle && header) {
+    const setMenuOpen = (open) => {
+      header.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    };
     toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
-      header.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(header.classList.contains('open')));
+      setMenuOpen(!header.classList.contains('open'));
     });
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        header.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+        setMenuOpen(false);
       });
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        header.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+      if (event.key === 'Escape' && header.classList.contains('open')) {
+        setMenuOpen(false);
         toggle.focus();
       }
+    });
+    document.addEventListener('click', (event) => {
+      if (!header.contains(event.target)) setMenuOpen(false);
+    });
+    window.matchMedia('(min-width: 801px)').addEventListener('change', (event) => {
+      if (event.matches) setMenuOpen(false);
     });
   }
 
@@ -57,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeLink = document.querySelector(`.main-nav a[data-nav="${currentPage}"]`);
     if (activeLink) {
       activeLink.classList.add('active');
+      activeLink.setAttribute('aria-current', 'page');
     }
   }
 
