@@ -23,6 +23,7 @@ The main menu is About, Journals, Places, Work, Shop, and Contact. The brand nam
 - `css/brand-system.css`: shared navigation, footer, typography, page introductions, Shop and Journals styles.
 - `css/pages/home.css`: the approved homepage and responsive layout.
 - `functions/api/newsletter.js`: existing email subscription proxy.
+- `functions/api/instagram-reels.js`: serves the three newest Instagram Reels for the homepage. Configure the Cloudflare Pages environment variables `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID`, and `INSTAGRAM_GRAPH_API_VERSION` for an Instagram professional account connected through Instagram Login with the `instagram_business_basic` permission. Keep the access token in a secret environment variable.
 
 The main branch is connected to Cloudflare Pages. Version stylesheet links when changing their content. `_headers` requests revalidation so returning visitors receive updated pages.
 

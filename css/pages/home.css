@@ -264,6 +264,48 @@ body[data-page=home] .section-road {
   max-width:none
 }
 
+.section-instagram-reels {
+  max-width:1280px
+}
+
+.instagram-reels-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  align-items:start
+}
+
+.instagram-reel-card {
+  min-width:0;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff
+}
+
+.instagram-reel-card .instagram-media {
+  width:calc(100% - 2px)!important;
+  min-width:0!important;
+  margin:0 auto!important;
+  border:0!important;
+  box-shadow:none!important
+}
+
+.instagram-reels-status {
+  grid-column:1/-1;
+  font-size:13px;
+  color:var(--muted)
+}
+
+.instagram-reels-links {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin:28px 0 0;
+  font-size:12px;
+  color:var(--muted)
+}
+
 .moments-heading {
   max-width:1128px;
   margin:0 auto 36px
@@ -605,6 +647,15 @@ body[data-page=home] .section-road {
 
   .insights-grid {
     grid-template-columns:1fr
+  }
+
+  .instagram-reels-grid {
+    grid-template-columns:1fr
+  }
+
+  .instagram-reel-card {
+    width:min(100%,540px);
+    margin:0 auto
   }
 
   .insight-card {

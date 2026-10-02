@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   loadLatestRealEstatePosts();
+  loadLatestInstagramReels();
 
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href]');
@@ -126,6 +127,80 @@ async function loadLatestRealEstatePosts() {
   } finally {
     container.setAttribute('aria-busy', 'false');
   }
+}
+
+async function loadLatestInstagramReels() {
+  const container = document.querySelector('[data-instagram-reels]');
+  if (!container) return;
+
+  try {
+    const response = await fetch('/api/instagram-reels', {
+      headers: { Accept: 'application/json' },
+    });
+    if (!response.ok) throw new Error(`Instagram reels request failed: ${response.status}`);
+
+    const payload = await response.json();
+    const reels = Array.isArray(payload.reels) ? payload.reels.slice(0, 3) : [];
+    if (reels.length === 0) throw new Error('No Instagram Reels returned');
+
+    const fragment = document.createDocumentFragment();
+    reels.forEach((reel) => {
+      let permalink;
+      try {
+        permalink = new URL(reel.permalink);
+      } catch {
+        return;
+      }
+      if (permalink.hostname !== 'www.instagram.com' || !/^\/(reel|p)\/[\w-]+\/?$/.test(permalink.pathname)) return;
+
+      const card = document.createElement('article');
+      card.className = 'instagram-reel-card';
+      const embed = document.createElement('blockquote');
+      embed.className = 'instagram-media';
+      embed.dataset.instgrmPermalink = permalink.href;
+      embed.dataset.instgrmVersion = '14';
+      const link = document.createElement('a');
+      link.href = permalink.href;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Instagram에서 릴스 보기';
+      embed.append(link);
+      card.append(embed);
+      fragment.append(card);
+    });
+
+    if (!fragment.childElementCount) throw new Error('No embeddable Instagram Reels returned');
+    container.replaceChildren(fragment);
+    loadInstagramEmbedScript();
+  } catch (error) {
+    console.warn('Could not load the latest Instagram Reels.', error);
+    const message = document.createElement('p');
+    message.className = 'instagram-reels-status';
+    message.append('최신 릴스는 ');
+    const link = document.createElement('a');
+    link.href = 'https://www.instagram.com/aquietdetour.co';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = 'Instagram에서 확인해 주세요 ↗';
+    message.append(link);
+    container.replaceChildren(message);
+  } finally {
+    container.setAttribute('aria-busy', 'false');
+  }
+}
+
+function loadInstagramEmbedScript() {
+  if (document.querySelector('script[data-instagram-embed]')) {
+    window.instgrm?.Embeds?.process();
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.instagram.com/embed.js';
+  script.dataset.instagramEmbed = 'true';
+  script.onload = () => window.instgrm?.Embeds?.process();
+  document.body.append(script);
 }
 
 function createInsightCard(post) {
