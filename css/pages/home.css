@@ -542,12 +542,15 @@ body[data-page=home] .section-pathways {
 .insight-card {
   border:1px solid var(--line);
   background:#faf9f5;
-  min-width:0
+  min-width:0;
+  overflow:hidden
 }
 
 .insight-card-image {
   display:block;
   aspect-ratio:16/9;
+  width:100%;
+  min-width:0;
   overflow:hidden
 }
 
@@ -764,6 +767,7 @@ body[data-page=home] .section-pathways {
   }
 
   .insight-card-image {
+    height:auto;
     aspect-ratio:16/9
   }
 
@@ -785,29 +789,6 @@ body[data-page=home] .section-pathways {
 
   .selected-projects-inner h2 {
     font-size:38px
-  }
-
-}
-
-.insight-card {
-  overflow:hidden
-}
-
-.insight-card-image {
-  min-width:0;
-  width:100%
-}
-
-@media(max-width:600px) {
-  .insight-card-image {
-    height:auto;
-    width:100%;
-    aspect-ratio:16/9
-  }
-
-  .insight-card-image img {
-    height:100%;
-    width:100%
   }
 
 }

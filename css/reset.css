@@ -4,14 +4,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  /* Set a refined default font stack using Inter and Noto Sans KR for multilingual support.
-     Inter provides a clean, modern look for English, while Noto Sans KR ensures
-     Korean text remains legible and harmonious. */
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #111;
-  background: #fff;
-}

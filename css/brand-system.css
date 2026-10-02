@@ -285,13 +285,15 @@ body[data-page=about] .editorial-hero-image img {
 }
 
 body[data-page=about] .about-profile {
-  grid-template-columns:220px 1fr;
+  grid-template-columns:1fr;
+  max-width:900px;
   background:transparent;
   border:0;
   border-bottom:1px solid var(--line);
   border-radius:0;
   padding:0 0 50px;
-  gap:48px
+  gap:48px;
+  text-align:left
 }
 
 body[data-page=about] .about-profile-image {
@@ -307,7 +309,7 @@ body[data-page=about] .about-profile-image img {
 
 body[data-page=about] .about-profile .lead {
   font-family:var(--serif);
-  font-size:22px;
+  font-size:clamp(20px,2.2vw,28px);
   line-height:1.6
 }
 
@@ -877,8 +879,7 @@ body[data-page=projects] .project-feature__heading {
   }
 
   body .footer-inner {
-    grid-template-columns:1fr 1fr;
-    gap:30px
+    grid-template-columns:1fr 1fr
   }
 
   .footer-brand {
@@ -967,11 +968,12 @@ body[data-page=projects] .project-feature__heading {
   }
 
   .product-section {
+    grid-template-columns:minmax(0,1fr);
     gap:28px
   }
 
   .product-card {
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(0,1fr);
     gap:30px
   }
 
@@ -1051,30 +1053,13 @@ body[data-page=projects] .project-feature__heading {
 
 }
 
-body[data-page=about] .about-profile {
-  grid-template-columns:1fr;
-  max-width:900px;
-  text-align:left
-}
-
 body[data-page=about] .about-profile-copy {
   max-width:700px;
   text-align:left
 }
 
-body[data-page=about] .about-profile .lead {
-  font-size:clamp(20px,2.2vw,28px)
-}
-
 .product-card,.product-section-heading,.product-copy {
   min-width:0
-}
-
-@media(max-width:600px) {
-  .product-section,.product-card {
-    grid-template-columns:minmax(0,1fr)
-  }
-
 }
 
 @media(max-width:360px) {
