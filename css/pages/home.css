@@ -264,13 +264,13 @@ body[data-page=home] .section-road {
   max-width:none
 }
 
-.section-instagram-reels {
+body[data-page=home] .section-instagram-reels {
   max-width:1280px;
-  padding-bottom:clamp(28px,4vw,48px)
+  padding-bottom:clamp(18px,2.5vw,32px)
 }
 
-.section-pathways {
-  padding-top:clamp(28px,4vw,48px)
+body[data-page=home] .section-pathways {
+  padding-top:clamp(18px,2.5vw,32px)
 }
 
 .instagram-reels-grid {
