@@ -264,51 +264,63 @@ body[data-page=home] .section-road {
   max-width:none
 }
 
-body[data-page=home] .section-instagram-reels {
+body[data-page=home] .section-quiet-detour {
   max-width:1280px;
-  padding-bottom:clamp(18px,2.5vw,32px)
+  padding-block:clamp(42px,6vw,76px)
 }
 
 body[data-page=home] .section-pathways {
   padding-top:clamp(18px,2.5vw,32px)
 }
 
-.instagram-reels-grid {
+.quiet-detour-layout {
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:24px;
-  align-items:start
+  grid-template-columns:.8fr 1.2fr;
+  gap:clamp(36px,7vw,96px);
+  align-items:center
 }
 
-.instagram-reel-card {
-  min-width:0;
-  overflow:hidden;
-  border:1px solid var(--line);
-  background:#fff
+.quiet-detour-copy h2 {
+  max-width:10ch;
+  margin:0 0 20px;
+  font:400 clamp(42px,5vw,68px)/.98 var(--serif);
+  letter-spacing:-.025em
 }
 
-.instagram-reel-card .instagram-media {
-  width:calc(100% - 2px)!important;
-  min-width:0!important;
-  margin:0 auto!important;
-  border:0!important;
-  box-shadow:none!important
-}
-
-.instagram-reels-status {
-  grid-column:1/-1;
+.quiet-detour-copy>p:not(.section-eyebrow) {
+  max-width:32ch;
+  margin:0 0 22px;
+  color:var(--muted);
   font-size:13px;
-  color:var(--muted)
+  line-height:1.9
 }
 
-.instagram-reels-links {
-  display:flex;
-  justify-content:center;
+.quiet-detour-copy .text-link {
+  display:inline-flex;
   align-items:center;
-  gap:12px;
-  margin:28px 0 0;
-  font-size:12px;
-  color:var(--muted)
+  gap:22px
+}
+
+.quiet-detour-image {
+  position:relative;
+  margin:0;
+  padding:12px;
+  border:1px solid #a0875745
+}
+
+.quiet-detour-image img {
+  display:block;
+  width:100%;
+  aspect-ratio:1.55;
+  object-fit:cover;
+  object-position:center 56%
+}
+
+.quiet-detour-image figcaption {
+  padding:14px 2px 1px;
+  color:var(--muted);
+  font-size:8px;
+  letter-spacing:.16em
 }
 
 .moments-heading {
@@ -657,15 +669,6 @@ body[data-page=home] .section-pathways {
     grid-template-columns:1fr
   }
 
-  .instagram-reels-grid {
-    grid-template-columns:1fr
-  }
-
-  .instagram-reel-card {
-    width:min(100%,540px);
-    margin:0 auto
-  }
-
   .insight-card {
     display:grid;
     grid-template-columns:1fr 1fr
@@ -703,6 +706,20 @@ body[data-page=home] .section-pathways {
 }
 
 @media(max-width:600px) {
+  .quiet-detour-layout {
+    grid-template-columns:1fr;
+    gap:28px
+  }
+
+  .quiet-detour-copy h2 {
+    max-width:none;
+    font-size:48px
+  }
+
+  .quiet-detour-image img {
+    aspect-ratio:1.2
+  }
+
   .luxury-hero {
     grid-template-columns:1fr;
     gap:38px;
