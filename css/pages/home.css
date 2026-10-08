@@ -295,10 +295,16 @@ body[data-page=home] .section-pathways {
   line-height:1.9
 }
 
-.quiet-detour-copy .text-link {
+.quiet-detour-links {
+  display:inline-flex;
+  flex-wrap:wrap;
+  gap:24px
+}
+
+.quiet-detour-links .text-link {
   display:inline-flex;
   align-items:center;
-  gap:22px
+  gap:12px
 }
 
 .quiet-detour-image {
