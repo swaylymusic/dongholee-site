@@ -588,13 +588,20 @@ body[data-page=home] .section-pathways {
 }
 
 .insight-card h3 {
+  font-family:'Noto Serif KR',var(--serif);
   font-size:25px;
-  margin:0 0 18px
+  margin:0 0 18px;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  font-variant-numeric:lining-nums;
 }
 
 .insight-description {
+  font-family:'Noto Serif KR',var(--serif);
   font-size:12px;
-  color:var(--muted)
+  color:var(--muted);
+  word-break:keep-all;
+  overflow-wrap:break-word;
 }
 
 .insights-status {
